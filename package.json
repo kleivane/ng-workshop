@@ -1,0 +1,21 @@
+{
+  "name": "ng-workshop",
+  "version": "0.0.0",
+  "description": "Angular workshop with focus on directives",
+  "main": "",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kleivane/ng-workshop.git"
+  },
+  "license": "CC BY-SA",
+  "bugs": {
+    "url": "https://github.com/kleivane/ng-workshop/issues"
+  },
+  "homepage": "https://github.com/kleivane/ng-workshop",
+  "devDependencies": {
+    "grunt": "~0.4.4"
+  }
+}
