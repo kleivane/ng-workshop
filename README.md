@@ -7,10 +7,10 @@ Lenke til slides:
 
 ## Installering
 
-* Sjekk at grunt-cli er installert, om ikke installer det med ´npm install grunt-cli´
-* Kjør ´npm install´
-* Om du ikke har bower installert, kjør ´npm install bower -g´
-* Kjør ´bower install
+* Sjekk at grunt-cli er installert, om ikke installer det med `npm install grunt-cli`
+* Kjør `npm install`
+* Om du ikke har bower installert, kjør `npm install bower -g`
+* Kjør `bower install`
 
 
 ## Oppsett av appen
