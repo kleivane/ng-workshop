@@ -3,17 +3,19 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		port: 9090,
+
 		connect: {
 			server: {
 		      options: {
-		        port: 9090
+		        port: '<%= port%>'
 		      }
     		}
 		},
 
 		open: {
 			server: {
-				path: 'http://localhost:9090/app'
+				path: 'http://localhost:<%= port%>/app'
 			}
 		},
 
