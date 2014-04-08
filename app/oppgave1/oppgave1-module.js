@@ -1,1 +1,1 @@
-angular.module('Oppgave1');
+angular.module('Oppgave1', []);

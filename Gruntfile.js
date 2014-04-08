@@ -7,6 +7,9 @@ module.exports = function(grunt){
 		build: 'build',
 
 		ngtemplates:  {
+		  options: {
+		    module: 'ng-workshop',
+		  },
 		  app:        {
 		    src:      'app/*/**.html',
 		    dest:     '<%= build%>/templates.js'
@@ -15,7 +18,7 @@ module.exports = function(grunt){
 
 		concat: {
 			dist: {	
-		      src: ['app/*/**-module.js', 'app/*/**.js', '<%= build%>/templates.js'],
+		      src: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js', '<%= build%>/templates.js'],
 		      dest: '<%= build%>/app.js',
 		    },
 		},
@@ -36,7 +39,8 @@ module.exports = function(grunt){
 
 		watch: {
 			scripts: {
-    			files: ['app/*']
+    			files: ['app/**'],
+    			tasks: 'package'
 			}
 		}
 
@@ -52,7 +56,7 @@ module.exports = function(grunt){
 
 
 
-	grunt.registerTask('server', ['connect', 'open', 'watch']);
+	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
 	grunt.registerTask('package', ['ngtemplates', 'concat']);
 
 

@@ -11,6 +11,7 @@ Lenke til slides:
 * Kjør `npm install`
 * Om du ikke har bower installert, kjør `npm install bower -g`
 * Kjør `bower install`
+* Forsøk å kjør `grunt server` dersom dette åpner et nettleservindu med en app, er alt gått OK.
 
 
 ## Oppsett av appen
