@@ -7,6 +7,7 @@ Lenke til slides:
 
 ## Installering
 
+* Installer [node](http://nodejs.org/) med npm om du ikke har det.
 * Sjekk at grunt-cli er installert, om ikke installer det med `npm install grunt-cli`
 * Kjør `npm install`
 * Om du ikke har bower installert, kjør `npm install bower -g`

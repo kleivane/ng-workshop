@@ -14,5 +14,11 @@
   ],
   "dependencies": {
     "angular-unicorn-directive": "~0.0.2"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
+  },
+  "devDependencies": {
+    "angular-route": "~1.2.16"
   }
 }
