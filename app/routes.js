@@ -7,5 +7,8 @@ angular.module('routes', ['ngRoute'])
 	      }).
 	      when('/oppgave2', {
 	        templateUrl: 'oppgave2/oppgave2.html'
+	      }).
+	      when('/', {
+	        templateUrl: 'main.html'
 	      })
 	  }]);
