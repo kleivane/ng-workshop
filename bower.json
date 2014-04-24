@@ -16,10 +16,11 @@
     "angular-unicorn-directive": "~0.0.2"
   },
   "resolutions": {
-    "angular": "1.2.16"
+    "angular": "^1.0.8"
   },
   "devDependencies": {
     "angular-route": "~1.2.16",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "angular-markdown-directive": "~0.3.0"
   }
 }
