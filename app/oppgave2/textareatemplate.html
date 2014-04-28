@@ -3,5 +3,5 @@
 	<textarea data-ng-name="name" data-ng-model="textareainnhold" data-ng-required="true" data-ng-trim="false" data-validate-textarea data-ng-blur="mistetFokus()"></textarea>
 
 	<p class="tellertekst" data-ng-class="{negativtekstteller: counter < 0 }"> {{counter}} </p>
-	<p data-ng-if="feil" class="melding">Feilmeldingstekst</p>
+	<p data-ng-show="feil" class="melding"></p>
 </div>

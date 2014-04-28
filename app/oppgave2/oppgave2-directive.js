@@ -2,7 +2,6 @@ angular.module('Oppgave2').directive('myTextarea', function($timeout) {
 	return {
 		replace: true,
 		restrict: 'A',
-		scope: true,
 		link: 
 		function(scope, element, attr) {
 			scope.maxlengde = attr.maxlengde;
