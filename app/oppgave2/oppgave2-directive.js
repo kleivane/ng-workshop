@@ -1,4 +1,4 @@
-angular.module('Oppgave2').directive('myTextarea', function($timeout) {
+angular.module('Oppgave2').directive('myTextarea', function() {
 	return {
 		replace: true,
 		restrict: 'A',
@@ -11,7 +11,7 @@ angular.module('Oppgave2').directive('myTextarea', function($timeout) {
 		templateUrl: '/app/oppgave2/textareatemplate.html'
 	};
 })
-.directive('validateTextarea', function($timeout) {
+.directive('validateTextarea', function() {
 	return {
 		require: ['ngModel', '^form'],
 		link: function(scope, element, attrs, ctrls) {
