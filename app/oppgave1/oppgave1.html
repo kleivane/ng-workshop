@@ -4,7 +4,6 @@
 	<!-- Legg inn direktivet her -->
 
 <btf-markdown>
-
 Direktivet:
 
 `ng-github user="kleivane" repo="ng-workshop"`
@@ -12,7 +11,6 @@ Direktivet:
   * Lag direktivet over med følgende template `a href="{{browseGithub}}"`. Verdien til `browseGithub` for eksempelet over skal være `https://github.com/kleivane/ng-workshop`.
   * Gjør et kall til gihub sitt api for å finne antall stargazers og vis dette som en del av lenken.
 
-  * Legg til et nytt ng-github-element til en annen konto. Legg til html  inni ett av elementene og vis dette.
 
 For å kalle github kan du bruke følgede eksempel:
 `$http.jsonp('https://api.github.com/repos/kleivane/ng-workshop?callback=JSON_CALLBACK').sucess(function(){......})`

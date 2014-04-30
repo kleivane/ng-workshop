@@ -2,7 +2,7 @@ angular.module('Oppgave1')
 	.directive('ngGithub', ['$http', function($http){
 		return {
 			restrict: 'E',
-			template: '<a href="{{browse}}">Stargazers: <span class="stargazers">{{count}}</span></a>',
+			template: '<span class="github-link"><a href="{{browse}}"><i class="fa fa-github"></i><span class="stargazers"> {{count}}</span> stars</a></span>',
 			replace: true,
 			link: function(scope, element, attrs){
 				var user = attrs.user;
