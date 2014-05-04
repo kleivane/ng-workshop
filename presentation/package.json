@@ -1,0 +1,8 @@
+{
+    "version": "0.0.0",
+    "name": "shower-angularjs-directives-workshop",
+    "author": "Ingvild Indrebø",
+    "dependencies": {
+      "gulp": "~3.6.2"
+    }
+}

@@ -27,10 +27,17 @@ angular.module('Oppgave2').directive('myTextarea', function() {
 				}
 			};
 			
-			ngModel.$parsers.unshift(function(viewValue) {
-				validerOgOppdater(viewValue);
-				return viewValue;
+			scope.$watch(function () {
+				return ngModel.$viewValue;
+			}, function(newValue) {
+				validerOgOppdater(newValue);
+				return newValue;
 			});
+
+			//ngModel.$parsers.unshift(function(viewValue) {
+			//	validerOgOppdater(viewValue);
+			//	return viewValue;
+			//});
 
 			function validerAntallTegn() {
 				if (scope.counter < 0 || scope.counter === scope.maxlengde) {

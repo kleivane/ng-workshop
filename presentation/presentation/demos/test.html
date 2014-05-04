@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+   <meta charset="UTF-8">
+   <title>ng-submit required</title>
+   <script src="js/angular/angular.js"></script>
+   <script type="text/javascript">
+   var bekkApp = angular.module('bekkApp', []);
+
+   bekkApp.controller('EmailCtrl', function ($scope) {
+      $scope.sendEmail = function () {
+         console.log("email sent");
+      }
+   });
+
+   bekkApp.directive("scopeExample", function() {
+      return {
+        scope: {
+                ngModel: '=',  // Bind the ngModel to the object given
+                onSend: '&',   // Pass a reference to the method 
+                fromName: '@'  // Store the string associated by fromName
+             },
+             template: '<div> From: {{ fromName }} <br/> To: {{ngModel}}</div>'
+          };
+       });
+   </script>
+</head>
+<body>
+
+   <div ng-app="bekkApp" ng-controller="EmailCtrl">
+      <input type="text" ng-model="to" />
+
+      <div scope-example ng-model="to" on-send="sendMail()"
+      from-name="ingvild.indrebo@bekk.no"></div>
+   </div>
+
+</body>
+</html>

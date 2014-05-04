@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="bower_components/shower-ribbon/styles/screen.css">
+    
+    <!--
+            To apply styles to the certain slides
+            set slide ID to get needed elements
+        -->
+        <style>
+        .slide {
+            background: #fff;
+        }
+        .slide:after {
+            display: none;
+        }
+        .slide p {
+            margin: 0;
+        }
+        .slide > div {
+            padding: 40px 70px 0;
+
+        }
+        .slide h2 {
+            margin: 0 0 20px;
+        }
+        .slide .left {
+           display: block;
+           float: left;
+           margin-right: 5px;
+           width: 375px;
+       }
+
+       #First h2 {
+        margin:65px 0 0;
+        text-align:center;
+        font-size:70px;
+    }
+    #First p {
+        margin:10px 0 0;
+        text-align:center;
+        font-style:italic;
+        font-size:20px;
+    }
+    #First img.center {
+        margin-top: 150px;
+    }
+
+    img.center {
+        display: block;
+        margin-left: auto; margin-right:
+        auto;
+    }
+    img.sidebyside {
+        width: 15em;
+        vertical-align: top;
+    }
+
+    p.source {
+        margin-top: 58%;
+        margin-left: 10%;
+        font-size: 12px;
+    }
+    table.padded tr > td:first-child {
+        padding-right: 10px;
+        text-align: right;
+    }
+    .demo {
+        border: #000 solid medium;
+    }
+    div.syntaxhighlighter {
+        /*margin: 0 !important;*/
+        font-size: 0.8em !important;
+    }
+    /*Reset Safari User Agent Styles*/
+    ul {-webkit-padding-start: 0px !important;}
+
+    .slide ol, .slide ul {
+     margin-bottom: 15px;
+ }
+ /* Mark text color: */
+ ::selection {
+     background:#FFAAFF;
+     /*color:#000;*/
+ }
+
+ </style>
+</head>
+<body class="list">
+    <header class="caption">
+        <h1>Angularjs-directives workshop</h1>
+
+        <p>By Ingvild Indrebø and Tine Kleivane</p>
+    </header>
+    <section class="slide cover" id="Cover">
+        <div>
+            <h2>Angularjs-directives workshop</h2>
+
+            <p>Brought to you by <a href="">Ingvild Indrebø</a> and <a href="">Tine Kleivane</a></p>
+        </div>
+    </section>
+
+    <section class="slide shout">
+        <div>
+            <h2><code><mark>$scope</mark></code></h2>
+        </div>
+    </section>
+
+    <section class="slide code">
+        <div>
+            <h2> What are scopes? </h2>
+            <ul>
+                <li>Objects - refers to the application model
+                    <ul><li>Controller  -&gt; <code><mark>$scope</mark></code> &lt;- View </li></ul></li>
+                    <br/>
+                    <li>Execution context for expressions
+                        <ul>
+                            <li><code>1+2={{1+2}}</code> -> 1+2=3</li>
+                            <li><code>{{username}}</code></li>
+                        </ul>
+                    </li>
+                </ul>
+
+             <!-- 
+            Scopes provide context against which expressions are evaluated. For example {{username}} expression is meaningless, unless it is evaluated against a specific scope which defines the username property.
+        -->
+    </div>
+</section>
+<section class="slide code">
+    <div>
+        <h2> What are scopes? </h2>
+        <ul>
+            <li>Propagate events</li>
+            <li>Watch expressions:</li>
+        </ul>
+        <pre class="brush: js">
+            scope.counter = 0;
+            scope.$watch('name', function(viewValue) {
+            scope.counter++;
+        });
+    </pre>
+</div>
+</section>
+<section class="slide">
+    <div>
+        <h2> What are scopes? </h2>
+        <ul>
+            <li>
+                Hierarchical structure which mimic the DOM structure
+            </li>
+        </ul>
+        <p> *Sette inn et bilde av batarang-visning fra sendsoknad*</p>
+
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2><code>$rootScope</code></h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Prototypal inheritance</h2>
+        <ul>
+            <li><code>$rootScope</code>
+                <ul><li>...
+                    <ul>
+                        <li><code>$parent</code>
+                            <ul><li><code>$scope</code></li></ul>
+                        </li>
+                    </ul>
+                </li></ul>
+            </li>
+        </ul>
+        <img src="img/prototypal-inheritance.png" class="center" alt="">
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Prototypal inheritance - directives</h2>
+        <table>
+            <tr>
+                <th scope="col">Directive scope:</th>
+                <th>Type of scope and inheritance</th>
+            </tr>
+            <tr>
+                <th scope="row">scope: false</th>
+                <td>no scope or inheritance</td>
+            </tr>
+            <tr>
+                <th scope="row">scope: true</th>
+                <td>new child scope + prototypical inheritence</td>
+            </tr>
+            <tr>
+                <th scope="row">scope: { ... }</th>
+                <td>new isolated scope</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Prototypal inheritance - ngModel</h2>
+        <p>Kan skrive om:</p>
+        <p>Having a '.' in your models will ensure that prototypal inheritance is in play. So, use
+        </p>
+        <pre class="brush: html">
+            <input type="text" ng-model="someObj.prop1"> 
+            rather than 
+            <input type="text" ng-model="prop1">
+        </pre>
+
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Isolated Scope</h2>
+        <ul>
+          <table>
+
+            <tr>
+                <th scope="row">@</th>
+                <td>One way binding (string)</td>
+            </tr>
+            <tr>
+                <th scope="row">=</th>
+                <td>Two way binding (model)</td>
+            </tr>
+            <tr>
+                <th scope="row">&</th>
+                <td>Parent scope expressions binding (functions)</td>
+            </tr>
+        </table>
+    </ul>   
+</div>
+</section>
+<section class="slide code">
+    <div>
+        <h2>Isolated Scope</h2>
+        <pre class="brush: html">
+            <input type="text" ng-model="to" />
+            
+            <div mydirective ng-model="to" on-send="sendMail()"
+                from-name="ingvild.indrebo@bekk.no"></div>
+        </pre>
+        <pre class="brush: js">
+            scope: {
+                ngModel: '=',  // Bind the ngModel to the object given
+                onSend: '&',   // Pass a reference to the method 
+                fromName: '@'  // Store the string associated by fromName
+            }
+        </pre>
+                 <iframe class="demo" src="demos/test.html" style="position: relative;"></iframe>
+
+    </div>
+</section>
+<section class="slide code">
+    <div>
+        <h2><code><mark>$watch </mark></code></h2>
+        <p>$watch(watchExpression, [listener], [objectEquality]); </p>
+
+        <pre class="brush: js">
+            scope.$watch('name', function(newValue, oldValue) {
+            scope.counter++;
+        });
+    </pre>
+    <pre class="brush: js">
+        scope.$watch(function() { //Listener function
+        return food;
+
+    }, function(newValue, oldValue) { // Change handler
+    if(newValue !== oldValue) {
+    scope.foodCounter++;
+}
+});
+
+</pre>
+            <!-- listener blir bare kalt når verdien endrer seg, function(newValue, oldValue)
+        -->
+    </div>
+</section>
+
+<!--  build:YEOMAN-GENERATOR-PLACEHOLDER -->
+<!--
+    The line above is used by shower generator to insert slides. Please don't remove.
+-->
+<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+-->
+<div class="progress">
+    <div></div>
+</div>
+
+<script src="bower_components/shower-core/shower.min.js"></script>
+<!-- Copyright © 2013 Ingvild Indrebø -->
+
+
+<!-- Include required JS files -->
+<script type="text/javascript" src="js/shCore.js"></script>
+
+
+    <!--
+        At least one brush, here we choose JS. You need to include a brush for every
+        language you want to highlight
+    -->
+    <script type="text/javascript" src="js/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/shBrushXml.js"></script>
+    <script type="text/javascript" src="js/shBrushCss.js"></script>
+
+
+    <!-- Include *at least* the core style and default theme -->
+    <link href="css/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+    <script type="text/javascript">
+    SyntaxHighlighter.defaults.toolbar = false;
+    SyntaxHighlighter.all();
+    </script>
+</body>
+</html>
