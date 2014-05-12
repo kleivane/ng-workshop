@@ -30,13 +30,13 @@
             margin: 0 0 20px;
         }
         .slide .left {
-           display: block;
-           float: left;
-           margin-right: 5px;
-           width: 375px;
-       }
+         display: block;
+         float: left;
+         margin-right: 5px;
+         width: 375px;
+     }
 
-       #First h2 {
+     #First h2 {
         margin:65px 0 0;
         text-align:center;
         font-size:70px;
@@ -81,15 +81,15 @@
     ul {-webkit-padding-start: 0px !important;}
 
     .slide ol, .slide ul {
-     margin-bottom: 15px;
- }
- /* Mark text color: */
- ::selection {
-     background:#FFAAFF;
-     /*color:#000;*/
- }
+       margin-bottom: 15px;
+   }
+   /* Mark text color: */
+   ::selection {
+       background:#FFAAFF;
+       /*color:#000;*/
+   }
 
- </style>
+   </style>
 </head>
 <body class="list">
     <header class="caption">
@@ -154,8 +154,29 @@
                 Hierarchical structure which mimic the DOM structure
             </li>
         </ul>
-        <p> *Sette inn et bilde av batarang-visning fra sendsoknad*</p>
-
+        <img src="img/battarang2.png" style="width: 70%;" class="center" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2> What are scopes? </h2>
+        <ul>
+            <li>
+                Hierarchical structure which mimic the DOM structure
+            </li>
+        </ul>
+        <img src="img/battarang.png" style="width: 70%;" class="center" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2> What are scopes? </h2>
+        <ul>
+            <li>
+                Hierarchical structure which mimic the DOM structure
+            </li>
+        </ul>
+        <img src="img/battarang1.png" style ="width: 70%;" class="center" alt="">
     </div>
 </section>
 
@@ -185,12 +206,8 @@
 
 <section class="slide">
     <div>
-        <h2>Prototypal inheritance - directives</h2>
+        <h2>Prototypal inheritance - <code> directives </code></h2>
         <table>
-            <tr>
-                <th scope="col">Directive scope:</th>
-                <th>Type of scope and inheritance</th>
-            </tr>
             <tr>
                 <th scope="row">scope: false</th>
                 <td>no scope or inheritance</td>
@@ -223,6 +240,7 @@
 <section class="slide">
     <div>
         <h2>Isolated Scope</h2>
+        <h3>scope: { ... }</h3>
         <ul>
           <table>
 
@@ -249,19 +267,20 @@
             <input type="text" ng-model="to" />
             
             <div mydirective ng-model="to" on-send="sendMail()"
-                from-name="ingvild.indrebo@bekk.no"></div>
+            from-name="ingvild.indrebo@bekk.no"></div>
         </pre>
         <pre class="brush: js">
             scope: {
-                ngModel: '=',  // Bind the ngModel to the object given
-                onSend: '&',   // Pass a reference to the method 
-                fromName: '@'  // Store the string associated by fromName
-            }
-        </pre>
-                 <iframe class="demo" src="demos/test.html" style="position: relative;"></iframe>
+            ngModel: '=',  // Bind the ngModel to the object given
+            onSend: '&',   // Pass a reference to the method 
+            fromName: '@'  // Store the string associated by fromName
+        }
+    </pre>
+    <iframe class="demo" src="demos/scope-example.html" style="position: relative;"></iframe>
 
-    </div>
+</div>
 </section>
+<!-- $watch-->
 <section class="slide code">
     <div>
         <h2><code><mark>$watch </mark></code></h2>
@@ -285,6 +304,18 @@
 </pre>
             <!-- listener blir bare kalt når verdien endrer seg, function(newValue, oldValue)
         -->
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>$watch list</h2>
+        <pre class="brush: html"> {{ username }}</pre>
+        <pre class="brush: html"> <input type="text" ng-model="name"></pre>
+        <pre class="brush: html">
+            <li ng-repeat="country in countries">
+                {{ country.name }} + {{country.code}}
+            </li>
+        </pre>
     </div>
 </section>
 
