@@ -30,13 +30,13 @@
             margin: 0 0 20px;
         }
         .slide .left {
-         display: block;
-         float: left;
-         margin-right: 5px;
-         width: 375px;
-     }
+           display: block;
+           float: left;
+           margin-right: 5px;
+           width: 375px;
+       }
 
-     #First h2 {
+       #First h2 {
         margin:65px 0 0;
         text-align:center;
         font-size:70px;
@@ -81,15 +81,15 @@
     ul {-webkit-padding-start: 0px !important;}
 
     .slide ol, .slide ul {
-       margin-bottom: 15px;
-   }
-   /* Mark text color: */
-   ::selection {
-       background:#FFAAFF;
-       /*color:#000;*/
-   }
+     margin-bottom: 15px;
+ }
+ /* Mark text color: */
+ ::selection {
+     background:#FFAAFF;
+     /*color:#000;*/
+ }
 
-   </style>
+ </style>
 </head>
 <body class="list">
     <header class="caption">
@@ -104,6 +104,44 @@
             <p>Brought to you by <a href="">Ingvild Indrebø</a> and <a href="">Tine Kleivane</a></p>
         </div>
     </section>
+
+    <section class="slide shout">
+        <div>
+            <h2><code><mark>directive</mark></code></h2>
+        </div>
+    </section>
+       <section class="slide">
+        <div>
+            <h2>Built in directives</h2>
+            <pre class="brush: html">
+                <input type="text" ng-model="name">
+                <div ng-show="name == 'bekk'">
+                    Til vanlig er jeg synlig
+                </div>
+            </pre>
+            <iframe class="demo" src="demos/ng-directives.html" style="position: relative;"></iframe>
+        </div>
+    </section>
+
+     <section class="slide">
+        <div>
+            <h2>Built in directives</h2>
+            <ul>
+                <li class="next">ngApp</li>
+                <li class="next">ngModel</li>
+                <li class="next">ngController</li>
+                <li class="next">ngClick</li>
+                <li class="next">ngChange</li>
+                <li class="next">ngBlur</li>
+                <li class="next">ngFocus</li>
+                <li class="next">ngClass</li>
+                <li class="next">ngStyle</li>
+                <li class="next">ngRepeat</li>
+                <li>...</li>
+            </ul>
+        </div>
+    </section>
+ 
 
     <section class="slide shout">
         <div>
