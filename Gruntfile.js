@@ -18,8 +18,18 @@ module.exports = function(grunt){
 
 		concat: {
 			dist: {
-		      src: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js', '<%= build%>/templates.js'],
-		      dest: '<%= build%>/app.js',
+			    options: {
+				    process: function(src, filepath) {
+				    	if(filepath.indexOf('test') > 0 ){
+				    		grunt.log.ok("File not included in destination: "+filepath);
+				    		return;
+				    	} else {
+				    		return src;
+				    	};
+			        },
+			    },
+			    src: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js', '<%= build%>/templates.js'],
+			    dest: '<%= build%>/app.js',
 		    },
 		},
 
@@ -53,8 +63,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-angular-templates');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-
-
 
 	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
 	grunt.registerTask('package', ['ngtemplates', 'concat']);

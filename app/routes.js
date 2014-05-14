@@ -11,6 +11,9 @@ angular.module('routes', ['ngRoute'])
 	      when('/oppgave3', {
 	        templateUrl: 'oppgave3/oppgave3.html'
 	      }).
+	      when('/oppgave4', {
+	        templateUrl: 'oppgave4/oppgave4.html'
+	      }).
 	      when('/', {
 	        templateUrl: 'main.html'
 	      })
