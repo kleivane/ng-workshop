@@ -1,7 +1,22 @@
-angular.module('Oppgavetransclude').directive('myTextarea', function() {
+angular.module('Oppgavetransclude').directive('ikeaStol', function() {
 
 		return {
-        transclude: true,
-        template: '<div class="something" ng-transclude> This is my directive content</div>'
-    }
+        scope: {
+        	pris: '@',
+        	farge: '@'
+        },
+      	transclude: true,
+      	restrict: 'A',
+      	replace: true,
+      	template:
+        '<div>' +
+        '<p>Produktbeskrivelse:</p>' +
+          '<div ng-transclude style="background-color: lightgreen;"></div>' +
+          	'<p>Pris: {{pris}} </p>' +
+          	'<p>Farge: {{farge}} </p>' +
+        '</div>',
+      link: function (scope, element, attrs)
+      {
+      	
+      }} 
 	});

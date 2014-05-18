@@ -1,25 +1,15 @@
 <div>
 <h2>Transclude</h2>
-<div my-directive>
-	<p>En tekst </p>
-	<button>En knapp</button>
+<div ikea-stol pris="95" farge="rød">
+	<p>Du kan stable stolene, slik at de tar opp mindre plass når de ikke brukes.</p>
 </div>
 
 	<!-- Legg inn direktivet her -->
 
 <btf-markdown>
-Direktivet:
-
-`ng-github user="kleivane" repo="ng-workshop"`
-
-  * Lag direktivet over med følgende template `a href="{{browseGithub}}"`. Verdien til `browseGithub` for eksempelet over skal være `https://github.com/kleivane/ng-workshop`.
-  * Gjør et kall til gihub sitt api for å finne antall stargazers og vis dette som en del av lenken.
-
-
-For å kalle github kan du bruke følgede eksempel:
-`$http.jsonp('https://api.github.com/repos/kleivane/ng-workshop?callback=JSON_CALLBACK').sucess(function(){......})`
-
-   
+  * I html-filen, lag to beskrivelser av to ulike ikea stoler hvor informasjon om pris, farge og produkbeskrivelse er oppgitt.
+  * Html-filen består nå av en del av de samme elementene. Trekk ut pris og farge til et eget direktiv som du kaller ikea-stol der pris og farge blir sendt med scopet. Bruk dette direktivet på de to ikea-stolelementene, og observer hva som skjer med produktbeskrivelsen.
+  * Bruk ng-transclude i direktivet for å vise frem igjen produktbeskrivelsen
 
 </btf-markdown>
 
