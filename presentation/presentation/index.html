@@ -415,6 +415,37 @@
     </div>
 </section>
 
+<section class="slide">
+    <div>
+        <h2> Transclude</h2>
+        <pre class="brush: js"> 
+         .directive('myDirective', function() {
+            return {
+              restrict: 'E',
+              transclude: true,
+              scope: {},
+              templateUrl: 'mytemplate.html',
+              link: function (scope, element) {
+                
+              }
+            };
+          });
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2> Transclude</h2>
+        <img src="img/transclude-true.png" style="width: 70%;" class="center" alt="">
+        <!--  http://www.angularjshub.com/examples/customdirectives/transclusion/ -->
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2> Transclude</h2>
+        Skal vi si noe om transclude: element? 5. parameteren på link-funksjonen. Brukes for å hente transcluded-elementet
+    </div>
+</section>
 <!--  build:YEOMAN-GENERATOR-PLACEHOLDER -->
 <!--
     The line above is used by shower generator to insert slides. Please don't remove.

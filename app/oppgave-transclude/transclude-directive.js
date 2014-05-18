@@ -6,7 +6,7 @@ angular.module('Oppgavetransclude').directive('ikeaStol', function() {
         	farge: '@'
         },
       	transclude: true,
-      	restrict: 'A',
+      	restrict: 'E',
       	replace: true,
       	template:
         '<div>' +
