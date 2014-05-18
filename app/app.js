@@ -3,6 +3,7 @@ angular.module('ng-workshop', [
 	'Oppgave2',
 	'Oppgave3',
 	'Oppgave4',
+	'Oppgavetransclude',
 	'routes',
 	'unicorn-directive',
 	'btford.markdown'

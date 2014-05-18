@@ -14,6 +14,9 @@ angular.module('routes', ['ngRoute'])
 	      when('/oppgave4', {
 	        templateUrl: 'oppgave4/oppgave4.html'
 	      }).
+	      when('/transclude', {
+	        templateUrl: 'Oppgave-transclude/transclude.html'
+	      }).
 	      when('/', {
 	        templateUrl: 'main.html'
 	      })

@@ -110,17 +110,17 @@
             <h2><code><mark>directive</mark></code></h2>
         </div>
     </section>
-     <section class="slide">
+    <section class="slide">
         <div>
             <!-- Forklare hva direktiver faktisk er og hvorfor det er en sentral del av Angular kan nok være lurt. -->
             <p>Direktiver er vanskelige å forklare.</p>
         </div>
     </section> 
-     <section class="slide">
+    <section class="slide">
         <div>
             <p><span style="text-decoration: line-through;">Direktiver</span>HTML-elementer er vanskelige å forklare.</p>
             
-                <pre class="brush: js">
+            <pre class="brush: js">
 
                 <a href="https://www.google.com/">Søk</a>
                 
@@ -129,88 +129,98 @@
                 <div class="content">Innhold</div>
                 
                 <h2>Overskrift</h2>
-                </pre>
+            </pre>
         </div>
     </section> 
-     <section class="slide">
+    <section class="slide">
         <div>
             <ul>
                 <li>Direktiver er en funksjon som kan utrette det du klarer å programmere, så en definisjon er vanskelig.</li>
                 <li>Funksjonen til er direktiv kjøres når Angular-kompilatoren finner direktivet referert i DOMen.</li>
                 <li>De bestemmer selv hvordan direktive skal refereres, slik som html</li>
             </ul>
-    </section> 
-    <section class="slide">
-        <div>
-            Hva gjør direktivet?
+        </section> 
+        <section class="slide">
+            <div>
+                Hva gjør direktivet?
 
-            <ul><li>Utvider HTML til noe mer forståelig for programmerere og andre med dårlig hukommelse</ul></li>
+                <ul><li>Utvider HTML til noe mer forståelig for programmerere og andre med dårlig hukommelse</ul></li>
 
-    </section> 
-    <section class="slide">
-        <div>
-            Direktiver i praksis
+            </section> 
+            <section class="slide">
+                <div>
+                    Direktiver i praksis
 
-            <ul>
-                <li>Er foretrukne måte å få tak i DOM-elementer på i Angular</li>
-                <li>Gir mulighet til å binde brukerevents, click, submit osv. </li>
-                <li>Skrive ut data</li>
-            </ul>
+                    <ul>
+                        <li>Er foretrukne måte å få tak i DOM-elementer på i Angular</li>
+                        <li>Gir mulighet til å binde brukerevents, click, submit osv. </li>
+                        <li>Skrive ut data</li>
+                    </ul>
 
-    </section> 
-       <section class="slide">
-        <div>
-            <h2>Built in directives</h2>
-            <pre class="brush: html">
-                <input type="text" ng-model="name">
-                <div ng-show="name == 'bekk'">
-                    Til vanlig er jeg synlig
-                </div>
-            </pre>
-            <iframe class="demo" src="demos/ng-directives.html" style="position: relative;"></iframe>
-        </div>
-    </section>
+                </section> 
+                <section class="slide">
+                    <div>
+                        <h2>Built in directives</h2>
+                        <pre class="brush: html">
+                            <input type="text" ng-model="name">
+                            <div ng-show="name == 'bekk'">
+                                Til vanlig er jeg usynlig
+                            </div>
+                        </pre>
+                        <iframe class="demo" src="demos/ng-directives.html" style="position: relative;"></iframe>
+                    </div>
+                </section>
 
-     <section class="slide">
-        <div>
-            <h2>Built in directives</h2>
-            <ul>
-                <li class="next">ngApp</li>
-                <li class="next">ngModel</li>
-                <li class="next">ngController</li>
-                <li class="next">ngClick</li>
-                <li class="next">ngChange</li>
-                <li class="next">ngBlur</li>
-                <li class="next">ngFocus</li>
-                <li class="next">ngClass</li>
-                <li class="next">ngStyle</li>
-                <li class="next">ngRepeat</li>
-                <li>...</li>
-            </ul>
-        </div>
-    </section>
- 
+                <section class="slide">
+                    <div>
+                        <h2>Built in directives</h2>
 
-    <section class="slide shout">
-        <div>
-            <h2><code><mark>$scope</mark></code></h2>
-        </div>
-    </section>
-
-    <section class="slide code">
-        <div>
-            <h2> What are scopes? </h2>
-            <ul>
-                <li>Objects - refers to the application model
-                    <ul><li>Controller  -&gt; <code><mark>$scope</mark></code> &lt;- View </li></ul></li>
-                    <br/>
-                    <li>Execution context for expressions
+                        <ul style=" width: 50%; float: left;">
+                            <li class="next">ngApp</li>
+                            <li class="next">ngModel</li>
+                            <li class="next">ngController</li>
+                            <li class="next">ngClick</li>
+                            <li class="next">ngChange</li>
+                            <li class="next">ngBlur</li>
+                        </ul> 
                         <ul>
-                            <li><code>1+2={{1+2}}</code> -> 1+2=3</li>
-                            <li><code>{{username}}</code></li>
+                            <li class="next">ngFocus</li>
+                            <li class="next">ngClass</li>
+                            <li class="next">ngStyle</li>
+                            <li class="next">ngRepeat</li>
+                            <li class="next">...</li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </section>
+                <section class="slide">
+                    <div>
+                        <h2>Built in directives</h2>
+
+                        <p>*Vise et eksempel av ett av de innebygde direktivene?* </p>
+                    </div>
+                </section>
+
+
+                <section class="slide shout">
+                    <div>
+                        <h2><code><mark>$scope</mark></code></h2>
+                    </div>
+                </section>
+
+                <section class="slide code">
+                    <div>
+                        <h2> What are scopes? </h2>
+                        <ul>
+                            <li>Objects - refers to the application model
+                                <ul><li>Controller  -&gt; <code><mark>$scope</mark></code> &lt;- View </li></ul></li>
+                                <br/>
+                                <li>Execution context for expressions
+                                    <ul>
+                                        <li><code>1+2={{1+2}}</code> -> 1+2=3</li>
+                                        <li><code>{{username}}</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
 
              <!-- 
             Scopes provide context against which expressions are evaluated. For example {{username}} expression is meaningless, unless it is evaluated against a specific scope which defines the username property.
