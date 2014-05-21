@@ -327,6 +327,60 @@
                         </pre>
                   </div>
                </section>
+               <section class="slide">
+                  <div>
+                     <h2>replace</h2>
+                     
+                  </div>
+               </section>
+
+               <section class="slide">
+                  <div>
+                     <h2>restrict</h2>
+                     <ul>
+                        <li><code>E</code> - Element name: <code>&lt;my-directive&gt;&lt;/my-directive&gt;</code></li>
+                        <li><code>A</code> - Attribute: <code>&lt;div my-directive="exp"&gt;&lt;/div&gt;</code></li>
+                        <li><code>C</code> - Class: <code>&lt;div class="my-directive: exp;"&gt;&lt;/div&gt;</code></li>
+                        <li><code>M</code> - Comment: <code>&lt;!-- directive: my-directive exp --&gt;</code></li>
+                     </ul>
+
+                     <p>Default:</p>
+                     <ul>
+                        <li><code>A</code> - Attribute: <code>&lt;div my-directive="exp"&gt;&lt;/div&gt;</code></li>
+                     </ul>
+
+                  </div>
+               </section>
+
+                <section class="slide">
+                  <div>
+                     <h2>restrict - anbefalinger fra core-teamet</h2>
+                     <p>
+                        Element (E) og atributt (A) anbefales over klasse (C) og  kommentar (M) på grunn av lesbarhet.
+                     </p>
+
+                  </div>
+               </section>
+
+               <section class="slide">
+                  <div>
+                     <h2>restrict - anbefalinger fra core-teamet</h2>
+                     <p>
+                        Bruk attributt når du legger til funksjonalitet på et eksisterende element.
+                        <ul>
+                            <li>spinner</li>
+                            <li>ng-show og ng-hide</li>
+                        </ul>
+                     </p>
+                     <p>
+                        Bruk element når du lager en komponent hvor du kan kontrollere html-templaten.
+
+                        Use an element when you are creating a component that is in control of the template. The common case for this is when you are creating a Domain-Specific Language for parts of your template. 
+                    </p>
+                     
+
+                  </div>
+               </section>
 
 
                 <section class="slide shout">
