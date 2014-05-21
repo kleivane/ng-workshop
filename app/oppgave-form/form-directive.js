@@ -1,4 +1,4 @@
-angular.module('Oppgave4')
+angular.module('Formoppgave')
 	.directive('rating', function(){
 		return {
 			link: function($scope){
@@ -9,6 +9,6 @@ angular.module('Oppgave4')
 				});
 
 			},
-			templateUrl: '/app/oppgave4/oppgave4-directive.html'
+			templateUrl: '/app/oppgave-form/form-template.html'
 		};	
 	})

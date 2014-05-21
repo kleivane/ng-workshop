@@ -1,4 +1,4 @@
-angular.module('Oppgave2').directive('myTextarea', function() {
+angular.module('Textareaoppgave').directive('myTextarea', function() {
 	return {
 		replace: true,
 		restrict: 'A',
@@ -8,7 +8,7 @@ angular.module('Oppgave2').directive('myTextarea', function() {
 			scope.counter = attr.maxlengde;
 			scope.feil = false;
 		},
-		templateUrl: '/app/oppgave2/textareatemplate.html'
+		templateUrl: '/app/oppgave-textarea/textareatemplate.html'
 	};
 })
 .directive('validateTextarea', function() {

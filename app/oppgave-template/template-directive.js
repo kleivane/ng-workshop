@@ -1,4 +1,4 @@
-angular.module('Oppgave1')
+angular.module('Templateoppgave')
 	.directive('ngGithub', ['$http', function($http){
 		return {
 			restrict: 'E',

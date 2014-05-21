@@ -1,2 +1,0 @@
-angular.module('Oppgave2', []);
-

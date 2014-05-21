@@ -1,4 +1,4 @@
-angular.module('Oppgave3').directive('mittDirektiv', function() {
+angular.module('Scopeoppgave').directive('mittDirektiv', function() {
   return {
     replace: true,
     require: '^ngModel',
@@ -8,6 +8,6 @@ angular.module('Oppgave3').directive('mittDirektiv', function() {
     },
     link: function(scope) {
     },
-    templateUrl: '/app/oppgave3/scopetemplate.html'
+    templateUrl: '/app/oppgave-scope/scopetemplate.html'
   };
 });
