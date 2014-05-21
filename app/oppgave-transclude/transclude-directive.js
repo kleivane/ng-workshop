@@ -1,22 +1,30 @@
-angular.module('Oppgavetransclude').directive('ikeaStol', function() {
+angular.module('Oppgavetransclude').directive('menyDirektiv', function() {
 
 		return {
         scope: {
-        	pris: '@',
-        	farge: '@'
+        	aktivtElement: '@'
         },
       	transclude: true,
-      	restrict: 'E',
+      	restrict: 'A',
       	replace: true,
       	template:
         '<div>' +
-        '<p>Produktbeskrivelse:</p>' +
-          '<div ng-transclude style="background-color: lightgreen;"></div>' +
-          	'<p>Pris: {{pris}} </p>' +
-          	'<p>Farge: {{farge}} </p>' +
+        	'<div class="meny">' +
+        	'<p>Oppgaver</p>' +
+			'<ul>' +
+				'<li><a href="#template">Template</a></li>' +
+				'<li><a href="#textarea">Textarea</a></li>'+
+				'<li><a href="#scope">Scope</a></li>' +
+				'<li><a href="#form">Form</a></li>'+
+				'<li><a href="#transclude">Transclude</a></li>' +
+			'</ul>' +
+        	'</div>' +
+
+          '<div ng-transclude></div>' +
         '</div>',
-      link: function (scope, element, attrs)
-      {
-      	
-      }} 
+
+		link: function(scope, element, attr) {
+			$(element.find("li")[scope.aktivtElement-1]).addClass("aktivt-element");
+        }
+      } 
 	});

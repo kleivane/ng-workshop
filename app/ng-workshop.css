@@ -1,3 +1,39 @@
 body {
 	background: lavenderblush;
 }
+
+.meny {
+	background: lightpink;
+	max-width: 7em;
+}
+
+.meny p {
+	padding: 15px;
+	margin: 0;
+}
+.meny ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+.meny li {
+	padding: 15px 20px;
+	border: 1px solid lavenderblush;
+}
+
+.meny li:hover {
+	background: pink;
+}
+.meny li:last {
+	padding-bottom: 0;
+}
+.meny a {
+	text-decoration: none;
+	color: #333;
+}
+
+.meny .aktivt-element {
+	background: lightcoral;
+}

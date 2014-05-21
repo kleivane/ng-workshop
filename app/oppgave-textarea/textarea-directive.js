@@ -2,8 +2,7 @@ angular.module('Textareaoppgave').directive('myTextarea', function() {
 	return {
 		replace: true,
 		restrict: 'A',
-		link: 
-		function(scope, element, attr) {
+		link: function(scope, element, attr) {
 			scope.maxlengde = attr.maxlengde;
 			scope.counter = attr.maxlengde;
 			scope.feil = false;
