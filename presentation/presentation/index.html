@@ -243,6 +243,35 @@
 
                    <section class="slide">
                       <div>
+                         <h2>Egne direktiver - casing</h2>
+
+                            <p>Camel case blir til train-case</p>
+
+                             <pre class="brush: js">
+                            myApp.directive('ngTextArea', function(dep1, dep2) { //.....
+
+                            <ng-text-area></ng-text-area>
+
+                            </pre>
+
+
+                            <pre class="brush: js">
+                            myApp.directive('gjeInformasjonstekst', function(dep1, dep2) { /..
+
+                            <gje-informasjonstekst></gje-informasjonstekst>
+
+                            </pre>
+                            
+                            <pre class="brush: js">
+                            myApp.directive('navFormSection', function(dep1, dep2) { //..
+
+                            <nav-form-section></nav-form-section>
+                            </pre>
+                      </div>
+                   </section>
+
+                   <section class="slide">
+                      <div>
                          <h2>Egne direktiver - navngivning</h2>
 
                          <p>ng-prefikset er reservert til bruk i Angular</p>
@@ -275,38 +304,11 @@
                       </div>
                    </section>
 
-                   <section class="slide">
-                      <div>
-                         <h2>Egne direktiver - casing</h2>
-
-                            <p>Camel case blir til train-case</p>
-
-                             <pre class="brush: js">
-                            myApp.directive('ngTextArea', function(dep1, dep2) { //.....
-
-                            <ng-text-area></ng-text-area>
-
-                            </pre>
-
-
-                            <pre class="brush: js">
-                            myApp.directive('gjeInformasjonstekst', function(dep1, dep2) { /..
-
-                            <gje-informasjonstekst></gje-informasjonstekst>
-
-                            </pre>
-                            
-                            <pre class="brush: js">
-                            myApp.directive('navFormSection', function(dep1, dep2) { //..
-
-                            <nav-form-section></nav-form-section>
-                            </pre>
-                      </div>
-                   </section>
+                   
 
                 <section class="slide">
                   <div>
-                     <h2>Directive API</h2>
+                     <h2>APIet</h2>
                         <pre class="brush: js">
                         myApp.directive('myDirective', function(dep1, dep2) {
                           return {
@@ -330,7 +332,13 @@
                <section class="slide">
                   <div>
                      <h2>replace</h2>
+                     <p>Avgjør hvorvidt direktivet skal erstatte elementet som kalte det, eller om direktivet skal bli en underelement av det originale elementet.</p>
+
+                     <p>
+                     Default:
                      
+                     <code>replace: false</code>
+                 </p>
                   </div>
                </section>
 
