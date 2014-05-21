@@ -144,7 +144,10 @@
             <div>
                 Hva gjør direktivet?
 
-                <ul><li>Utvider HTML til noe mer forståelig for programmerere og andre med dårlig hukommelse</ul></li>
+                <ul>
+                    <li>Utvider HTML til noe mer sematisk med mulighet for tilpasning til domenet</li>
+                    <li>Unngår repetisjon</li>
+                </ul>
 
             </section> 
             <section class="slide">
@@ -199,6 +202,68 @@
                         <p>*Vise et eksempel av ett av de innebygde direktivene?* </p>
                     </div>
                 </section>
+
+                <section class="slide">
+                    <div>
+                        <h2>Egne direktiver</h2>
+
+                        <ul>
+                            <li>er ikke skumlere enn de innebygde, du bruker dem hele tiden!</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="slide">
+                      <div>
+                         <h2>Egne direktiver</h2>
+
+                            <pre class="brush: js">
+                            myApp.directive('myDirective', function(dep1, dep2) {
+                              return {
+                                /**
+                                *
+                                *
+                                *
+                                *
+                                * API
+                                *
+                                *
+                                *
+                                *
+                                **/
+                              }
+                            });
+                            </pre>
+
+                             <pre class="brush: html">
+                                <my-directive></my-directive>
+                            </pre>
+                      </div>
+                   </section>
+
+                <section class="slide">
+                  <div>
+                     <h2>Directive API</h2>
+                        <pre class="brush: js">
+                        myApp.directive('myDirective', function(dep1, dep2) {
+                          return {
+                            replace: true,
+                            restrict: 'EACM',
+                            priority: 10,
+                            templateUrl: 'directive.html',
+                            template: '<div></div>',
+                            scope: { localName:'@' },
+                            controller: function($scope, $element, $attrs, $transclude, dep1) {},
+                            compile: function compile(tElement, tAttrs, transclude) {
+                            },
+                            link: function postLink(scope, iElement, iAttrs) {
+                              scope.$watch('name', function(newVal, oldVal) {..}
+                            }
+                          }
+                        });
+                        </pre>
+                  </div>
+               </section>
 
 
                 <section class="slide shout">
