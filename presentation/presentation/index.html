@@ -408,6 +408,19 @@
                  <section class="slide">
                     <div>
                         <h2>link</h2>
+                         <pre class="brush: js">
+                        myApp.directive('myDirective', function(dep1, dep2) {
+                          return {
+                            link: function postLink(scope, iElement, iAttrs) {
+                              scope.$watch('name', function(newVal, oldVal) {..}
+                            }
+                          }
+                        });
+                        </pre>
+
+                        <p>
+                            Link-funksjonen registerer DOM-eventer og oppdaterer DOMen selv. Her vil vi finne mye av logikken i templatene.
+                        <p>
                     </div>
                 </section>
 
