@@ -1,4 +1,22 @@
-<p>Skriv inn ditt favoritt godteri </p>
-<p> dette er mitt favoritt </p>
-<input type="text" ng-model="godteri"> 
-<div mitt-direktiv tekst="Dette er mitt favoritt godteri" ng-model="godteri"></div>
+<p>Booking av rom på BEKK-hotellet</p>
+<label id="gjester">Antall gjester: </label>
+<input for="gjester" type="text" ng-model="gjester">
+<p>Ønsker du frokost?</p>
+<label id="frokost">Ja</label><input for="frokost" type="radio" ng-model="frokost" value="1">
+<label id="frokost">Nei</label><input for="frokost" type="radio" ng-model="frokost" value="0">
+
+<div booking-direktiv hotell="BEKK-hotellet" gjester="gjester" frokost="frokost"></div>
+
+<btf-markdown>
+
+	Målet for denne oppgaven er å lage en liten del av et bookingsystem som viser navnet på et hotell, samt gir mulighet for å velge antall gjester som skal bo på hotellet og om de vil ha frokost. Prisen for overnattingen skal kalkuleres.
+  
+  * Start med å lage et inputfelt for antall gjester og en radiogruppe for valg av frokost. Valuen på radiogruppen er 1 for ja jeg vil ha frokost og 0 for jeg vil ikke ha frokost.
+  
+  * Lag deretter et direktiv som skal presentere navnet på hotellet som er booket samt et prisoverslag for bookingen. En gjest koster 100kr og en frokost koster 25.
+  
+  * Bruk isolated scope til å sende med informasjon om antall gjester og om frokost ønskes.
+  
+  * Prisanslaget skal oppdateres når antall gjester/frokostvalg endres
+
+</btf-markdown>

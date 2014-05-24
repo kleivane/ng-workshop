@@ -1,6 +1,8 @@
 <div>
-<br/>
----- her starter direktivet -----
-  <p> {{tekst}}</p>
- <input type="text" ng-model="ngModel">
+	<br/>
+	Totalprisen for oppholdet på {{hotell}} er: 
+	<span ng-if="gjester * (rompris + frokost* frokostpris) > 0">
+		{{gjester * (rompris + frokost* frokostpris)}}
+	</span>
+	test: {{test}}
 </div>
