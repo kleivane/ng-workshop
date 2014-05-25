@@ -1,6 +1,6 @@
 <div>
 	<p>Hva er din favoritt-dummy-tekst?</p>
-	<textarea data-ng-name="name" data-ng-model="textareainnhold" data-ng-required="true" data-ng-trim="false" data-validate-textarea data-ng-blur="mistetFokus()"></textarea>
+	<textarea ng-name="name" ng-model="textareainnhold" ng-required="true" ng-trim="false" validate-textarea ng-blur="mistetFokus()"></textarea>
 
 	<p class="tellertekst" data-ng-class="{negativtekstteller: counter < 0 }"> {{counter}} </p>
 	<p data-ng-show="feil" class="melding"></p>

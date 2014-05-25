@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+ <meta charset="UTF-8">
+ <title>ng-submit required</title>
+ <script src="js/angular/angular.js"></script>
+ <script type="text/javascript">
+ var bekkApp = angular.module('bekkApp', []);
+
+ bekkApp.directive("watchDirective", function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    scope: { 
+     modell: '=' 
+   },
+   template: '<div> Teller: {{ teller }} </div>', 
+
+   link: function(scope) {
+     scope.teller = 0;
+
+     scope.$watch(function () {
+      return scope.modell
+    }, function(newValue, old) {
+      if(newValue !== old) {
+        scope.teller++;
+      }
+    });          
+   }
+ }
+});
+ </script>
+</head>
+<body>
+
+ <div ng-app="bekkApp">
+  <input type="text" ng-model="modell">
+  <watch-directive modell="modell"></watch-directive>
+</div>
+</body>
+</html>
