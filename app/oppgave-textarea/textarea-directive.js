@@ -1,7 +1,6 @@
 angular.module('Textareaoppgave').directive('myTextarea', function() {
 	return {
 		replace: true,
-		restrict: 'A',
 		link: function(scope, element, attr) {
 			scope.maxlengde = attr.maxlengde;
 			scope.counter = attr.maxlengde;
@@ -32,10 +31,6 @@ angular.module('Textareaoppgave').directive('myTextarea', function() {
 				return newValue;
 			});
 
-			//ngModel.$parsers.unshift(function(viewValue) {
-			//	validerOgOppdater(viewValue);
-			//	return viewValue;
-			//});
 
 			function validerAntallTegn() {
 				if (scope.counter < 0 || scope.counter === scope.maxlengde) {

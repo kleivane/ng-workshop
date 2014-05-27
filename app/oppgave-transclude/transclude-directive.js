@@ -19,7 +19,6 @@ angular.module('Oppgavetransclude').directive('menyDirektiv', function() {
 				'<li><a href="#transclude">Transclude</a></li>' +
 			'</ul>' +
         	'</div>' +
-
           '<div ng-transclude></div>' +
         '</div>',
 
