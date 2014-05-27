@@ -12,10 +12,9 @@ angular.module('Textareaoppgave').directive('myTextarea', function() {
 })
 .directive('validateTextarea', function() {
 	return {
-		require: ['ngModel', '^form'],
+		require: ['ngModel'],
 		link: function(scope, element, attrs, ctrls) {
 			var ngModel = ctrls[0];
-			var form = ctrls[1];
 
 			var validerOgOppdater = function(viewValue) {
 				if (viewValue) {
