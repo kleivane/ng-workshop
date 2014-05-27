@@ -4,17 +4,25 @@
 <p>Ønsker du frokost?</p>
 <label id="frokost">Ja</label><input for="frokost" type="radio" ng-model="frokost" value="1">
 <label id="frokost">Nei</label><input for="frokost" type="radio" ng-model="frokost" value="0">
-
-<div booking-direktiv hotell="BEKK-hotellet" gjester="gjester" frokost="frokost"></div>
+<p>Ønsker du fullpensjon?</p>
+<label id="frokost">Ja</label><input for="frokost" type="radio" ng-model="fullpensjon" value="1">
+<label id="frokost">Nei</label><input for="frokost" type="radio" ng-model="fullpensjon" value="0">
+<span booking-direktiv hotell="Tines hotell" gjester="gjester" mat="frokost" gjestepris="100" matpris="25"></span>
+<span booking-direktiv hotell="Ingvilds hotell" gjester="gjester" mat="fullpensjon" gjestepris="1000" matpris="100"></span>
 
 <btf-markdown>
-* Fiks slik at forrige oppgave kan vise to separate github-kontoer på en gang.
+Målet for denne oppgaven er å lage en liten del av et bookingsystem som viser navnet og sammenligner pris på to forskjellige hoteller, samt gir mulighet for å velge antall gjester som skal bo på hotellet og om de vil ha frokost. Utregning bør bli noe som dette gjester * (rompris + mat * matpris).
 
-Målet for denne oppgaven er å lage en liten del av et bookingsystem som viser navnet på et hotell, samt gir mulighet for å velge antall gjester som skal bo på hotellet og om de vil ha frokost. Prisen for overnattingen skal kalkuleres.
+* Installer [Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?utm_source=chrome-ntp-icon) i Chrome.
 
-* Start med å lage et inputfelt for antall gjester og en radiogruppe for valg av frokost. Valuen på radiogruppen er 1 for ja jeg vil ha frokost og 0 for jeg vil ikke ha frokost.
-* Lag deretter et direktiv som skal presentere navnet på hotellet som er booket samt et prisoverslag for bookingen. En gjest koster 100kr og en frokost koster 25.
-* Bruk isolated scope til å sende med informasjon om antall gjester og om frokost ønskes.
-* Prisanslaget skal oppdateres når antall gjester/frokostvalg endres
+* Start med å lage et inputfelt for antall gjester og en radiogruppe for valg av mat. Valuen på radiogruppen er 1 for ja jeg vil ha mat og 0 for jeg vil ikke ha mat.
+* Lag deretter et direktiv som skal presentere navnet på hotellet samt et prisoverslag for bookingen. Man skal kunne sende inn pris pr gjest og pris på mat pr gjest
+* Lag to hoteller med forskjellig pris.
+* Hvilket scope blir brukt her?
+* Sett scope til true og observer i Batarang
+
+* Det ene hotellet tilbyr frokost til 100 og det andre tilbyr fullpensjon til 1000 kr dagen. Endre og legg til radioknapper for å illustere dette.
+* Oppdater direktivet til å takle de nye endringene
+* Se hvilke endringer dette gir i scope-visningen i Batarang
 
 </btf-markdown>

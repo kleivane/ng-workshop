@@ -2,13 +2,13 @@ angular.module('Scopeoppgave').directive('bookingDirektiv', function() {
   return {
     replace: true,
     scope: {
-      frokost: '=',
-      gjester: '=',
-      hotell: '@'
+      mat: "=",
+      gjester: "="
     },
-    link: function(scope) {
-      scope.rompris = 100;
-      scope.frokostpris = 25;
+    link: function(scope, element, attrs) {
+      scope.rompris = parseInt(attrs.gjestepris);
+      scope.frokostpris = parseInt(attrs.matpris);
+      scope.hotell = attrs.hotell;
     },
     templateUrl: '/app/oppgave-scope/scopetemplate.html'
   };
