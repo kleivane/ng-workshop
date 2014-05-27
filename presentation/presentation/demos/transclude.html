@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+ <meta charset="UTF-8">
+ <title>ng-submit required</title>
+ <script src="js/angular/angular.js"></script>
+ <script type="text/javascript">
+ var bekkApp = angular.module('bekkApp', []);
+
+ bekkApp.directive("transcludeDirective", function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    transclude: true,
+    template: '<div>' +
+    '<h4>Dette er innhold fra templaten</h4>' +
+    '<div ng-transclude style="background-color: lightgreen;"></div>' +
+    '</div>', 
+  }
+});
+ </script>
+</head>
+<body>
+
+ <div ng-app="bekkApp">
+  <transclude-directive>
+  <p>Dette er innholdet som stod her fra før</p>
+</transclude-directive>
+</div>
+</body>
+</html>

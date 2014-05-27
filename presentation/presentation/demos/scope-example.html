@@ -18,9 +18,9 @@
         scope: {
                 ngModel: '=',  // Bind the ngModel to the object given
                 onSend: '&',   // Pass a reference to the method 
-                fromName: '@'  // Store the string associated by fromName
+                fra: '@'  // Store the string associated by fromName
              },
-             template: '<div> From: {{ fromName }} <br/> To: {{ngModel}}</div>'
+             template: '<div>Fra: {{ fra }} <br/> Til: {{ngModel}}</div>'
           };
        });
    </script>
@@ -28,10 +28,10 @@
 <body>
 
    <div ng-app="bekkApp" ng-controller="EmailCtrl">
-      <input type="text" ng-model="to" />
+      <input type="text" ng-model="til" />
 
-      <div scope-example ng-model="to" on-send="sendMail()"
-      from-name="ingvild.indrebo@bekk.no"></div>
+      <div scope-example ng-model="til" on-send="sendMail()"
+      fra="ingvild.indrebo@bekk.no"></div>
    </div>
 
 </body>

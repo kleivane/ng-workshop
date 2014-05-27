@@ -5,26 +5,37 @@
     <title>ng-controller</title>
     <script src="js/angular/angular.js"></script>
     <script type="text/javascript">
-        var bekkApp = angular.module('bekkApp', []);
+    var bekkApp = angular.module('bekkApp', []);
 
-        bekkApp.controller('TeamsCtrl', function($scope) {
-            $scope.teams = [
-                { name: 'Stabæk' },
-                { name: 'RBK' },
-                { name: 'Odd' }
-            ];
-          });
+    bekkApp.controller('KakeCtrl', function($scope) {
+        $scope.kaker = [
+        { name: 'Sjokoladekake' }];
+
+        $scope.boller = [
+        'Skillingsbolle' ];
+    });
+
     </script>
 </head>
 <body>
 
-<div ng-app="bekkApp">
-    <ul ng-controller="TeamsCtrl">
-        <li ng-repeat="team in teams">
-            {{team.name}}
-        </li>
-    </ul>
-</div>
+    <div ng-app="bekkApp">
+        <div ng-controller="KakeCtrl">
+            <h3>Childscope:</h3>
+            <ul>
+             <li ng-repeat="kake in kaker">
+                <input type="text" ng-model="kake.name"></li>
+            </ul>
+            <ul>
+             <li ng-repeat="bolle in boller">
+                <input type="text" ng-model="bolle"></li>
+            </ul>
+
+            <h3>Parentscope: </h3>
+            <p>Sjokoladekake: {{ kaker[0].name }}</p>
+            <p>Bolle: {{ boller[0] }}</p>
+        </div>
+    </div>
 
 </body>
 </html>
