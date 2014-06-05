@@ -37,3 +37,7 @@ body {
 .meny .aktivt-element {
 	background: lightcoral;
 }
+
+.star-form input[type="radio"] {
+	visibility: hidden;
+}

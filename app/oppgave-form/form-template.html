@@ -1,7 +1,8 @@
-<form name="ratingForm">
+<form name="ratingForm" class="star-form">
 	<label ng-repeat="star in starRatings">
-		<input type="radio" name="rating" value="{{star.value}}"/>
-		<i class="fa fa-star-o fa-2"
-		   ng-class="{star.filled: fa-star}"></i>{{star.filled}}
+		<input type="radio" name="rating" value="{{star.value}}" 
+		ng-click="rate(star)"/>
+		<i class="fa fa-2"
+		   ng-class="star.filled ? 'fa-star' : 'fa-star-o'"></i>
 	</label>
 </form>
