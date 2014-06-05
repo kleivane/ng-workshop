@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
 
     // frameworks to use
@@ -15,14 +15,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/**.js'
+      'build/lib.js',
+      'build/app.js',
+      'app/**/*test.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'app/**.html',
-      'app/**.css'
     ],
 
 
@@ -63,6 +63,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

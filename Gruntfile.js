@@ -65,6 +65,11 @@ module.exports = function(grunt){
 		karma: {
 		  unit: {
 		    configFile: 'karma.conf.js'
+		  },
+		  cont: {
+		    configFile: 'karma.conf.js',
+		    browsers: ['Chrome'],
+		    singleRun: false
 		  }
 		},
 
@@ -92,8 +97,10 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-open');
 
-	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
 	grunt.registerTask('package', ['ngtemplates', 'concat']);
+
+	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
+	grunt.registerTask('test', ['package', 'karma:unit' ]);
 
 
 }
