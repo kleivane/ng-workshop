@@ -6,6 +6,12 @@ module.exports = function(grunt){
 		port: 9090,
 		build: 'build',
 
+		src: {
+			lib: '',
+			app: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js'],
+			templates: ['<%= build%>/templates.js']
+		},
+
 		ngtemplates:  {
 		  options: {
 		    module: 'ng-workshop',
@@ -28,7 +34,7 @@ module.exports = function(grunt){
 				    	};
 			        },
 			    },
-			    src: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js', '<%= build%>/templates.js'],
+			    src: ['<%= src.app%>','<%= src.templates%>'],
 			    dest: '<%= build%>/app.js',
 		    },
 		},
