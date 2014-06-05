@@ -7,7 +7,18 @@ module.exports = function(grunt){
 		build: 'build',
 
 		src: {
-			lib: '',
+			lib: [
+				'bower_components/jquery/dist/jquery.min.js',
+				'bower_components/underscore/underscore.js',
+				'bower_components/angular/angular.min.js',
+				'bower_components/angular-route/angular-route.min.js',
+				'bower_components/angular-unicorn-directive/unicorn.js',
+				'bower_components/angular-sanitize/angular-sanitize.min.js',
+				'bower_components/showdown/compressed/showdown.js',
+				'bower_components/angular-markdown-directive/markdown.js',
+				'bower_components/bootstrap/dist/js/bootstrap.js',
+
+			],
 			app: ['app/*/**-module.js', 'app/*/**.js', 'app/*.js'],
 			templates: ['<%= build%>/templates.js']
 		},
@@ -37,6 +48,10 @@ module.exports = function(grunt){
 			    src: ['<%= src.app%>','<%= src.templates%>'],
 			    dest: '<%= build%>/app.js',
 		    },
+		    lib: {
+		    	src: '<%= src.lib%>',
+			    dest: '<%= build%>/lib.js',
+		    }
 		},
 
 		connect: {
