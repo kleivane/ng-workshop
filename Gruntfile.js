@@ -41,6 +41,12 @@ module.exports = function(grunt){
     		}
 		},
 
+		karma: {
+		  unit: {
+		    configFile: 'karma.conf.js'
+		  }
+		},
+
 		open: {
 			server: {
 				path: 'http://localhost:<%= port%>/app'
@@ -58,11 +64,12 @@ module.exports = function(grunt){
 
 	});
 
-	grunt.loadNpmTasks('grunt-open');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-angular-templates');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-open');
 
 	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
 	grunt.registerTask('package', ['ngtemplates', 'concat']);
