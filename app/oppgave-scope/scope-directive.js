@@ -10,6 +10,6 @@ angular.module('Scopeoppgave').directive('bookingDirektiv', function() {
       scope.frokostpris = parseInt(attrs.matpris);
       scope.hotell = attrs.hotell;
     },
-    templateUrl: '/app/oppgave-scope/scopetemplate.html'
+    templateUrl: 'app/oppgave-scope/scopetemplate.html'
   };
 });

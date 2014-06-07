@@ -21,6 +21,6 @@ angular.module('Formoppgave')
 					})
 				};
 			},
-			templateUrl: '/app/oppgave-form/form-template.html'
+			templateUrl: 'app/oppgave-form/form-template.html'
 		};	
 	})

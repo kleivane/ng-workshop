@@ -6,7 +6,7 @@ angular.module('Textareaoppgave').directive('myTextarea', function() {
 			scope.counter = attr.maxlengde;
 			scope.feil = false;
 		},
-		templateUrl: '/app/oppgave-textarea/textareatemplate.html'
+		templateUrl: 'app/oppgave-textarea/textareatemplate.html'
 	};
 })
 .directive('validateTextarea', function() {

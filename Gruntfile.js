@@ -28,7 +28,7 @@ module.exports = function(grunt){
 		    module: 'ng-workshop',
 		  },
 		  app:        {
-		    src:      'app/*/**.html',
+		    src:      'app/**/*.html',
 		    dest:     '<%= build%>/templates.js'
 		  }
 		},
@@ -63,11 +63,14 @@ module.exports = function(grunt){
 		},
 
 		karma: {
-		  unit: {
-		    configFile: 'karma.conf.js'
+		  options: {
+			configFile: 'karma.conf.js'
 		  },
+		  unit: {},
 		  cont: {
-		    configFile: 'karma.conf.js',
+		    singleRun: false
+		  },
+		  live: {
 		    browsers: ['Chrome'],
 		    singleRun: false
 		  }
@@ -100,7 +103,15 @@ module.exports = function(grunt){
 	grunt.registerTask('package', ['ngtemplates', 'concat']);
 
 	grunt.registerTask('server', ['package', 'connect', 'open', 'watch']);
-	grunt.registerTask('test', ['package', 'karma:unit' ]);
+	
+	grunt.registerTask('test', 'Custom testing task', function(target) {
+  		grunt.task.run('package');
+  		if(target){
+  			grunt.task.run('karma:'+target);
+  		} else {
+  			grunt.task.run('karma:unit');
+  		}
 
+	});
 
 }

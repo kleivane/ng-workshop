@@ -3,21 +3,21 @@ angular.module('routes', ['ngRoute'])
 	  	function($routeProvider) {
 	    $routeProvider.
 	      when('/template', {
-	        templateUrl: 'oppgave-template/template.html'
+	        templateUrl: 'app/oppgave-template/template.html'
 	      }).
 	      when('/textarea', {
-	        templateUrl: 'oppgave-textarea/textarea.html'
+	        templateUrl: 'app/oppgave-textarea/textarea.html'
 	      }).
 	      when('/scope', {
-	        templateUrl: 'oppgave-scope/scope.html'
+	        templateUrl: 'app/oppgave-scope/scope.html'
 	      }).
 	      when('/form', {
-	        templateUrl: 'oppgave-form/form.html'
+	        templateUrl: 'app/oppgave-form/form.html'
 	      }).
 	      when('/transclude', {
-	        templateUrl: 'Oppgave-transclude/transclude.html'
+	        templateUrl: 'app/oppgave-transclude/transclude.html'
 	      }).
 	      when('/', {
-	        templateUrl: 'main.html'
+	        templateUrl: 'app/main.html'
 	      })
 	  }]);
