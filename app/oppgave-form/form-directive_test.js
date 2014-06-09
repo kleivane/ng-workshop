@@ -1,8 +1,10 @@
 describe('Rating-direktivet', function(){
 	var elm, scope, createElm;
 
-	beforeEach(module('ng-workshop'))
-	beforeEach(module('Formoppgave'));
+	beforeEach(module('Formoppgave'));	
+	// load the template
+	beforeEach(module('app/oppgave-form/form-template.html'));
+
 	beforeEach(inject(function($rootScope, $compile){
 
 		createElm = function(element){
