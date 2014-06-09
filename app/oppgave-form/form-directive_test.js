@@ -24,10 +24,20 @@ describe('Rating-direktivet', function(){
 		expect($(elm).find('.fa-star-o').length).toBe(5);
 	});
 
-	it('skal ha 1 fylt stjerneikon etter å ha klikket på #1', function(){
+	it('skal ha 1 fylt og restene ufylte stjerneikoner etter å ha klikket på #1', function(){
 		createElm('<span rating></span>');
 		$(elm).find('input[value=1]').click()
 		expect($(elm).find('input[value=1] + i')).toHaveClass('fa-star')
+		expect($(elm).find('input[value!=1] + i')).not.toHaveClass('fa-star')
 	});
+
+	it('skal ha 5 fylt og ingen ufylte stjerneikoner etter å ha klikket på #5', function(){
+		createElm('<span rating></span>');
+		$(elm).find('input[value=5]').click()
+		expect($(elm).find('input + i')).toHaveClass('fa-star')
+		expect($(elm).find('input + i')).not.toHaveClass('fa-star-o')
+	});
+
+
 
 });
