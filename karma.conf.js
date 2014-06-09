@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       'build/lib.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angularjs-jasmine-matchers/dist/matchers.js',
       'build/app.js',
       'app/**/*test.js'
     ],
