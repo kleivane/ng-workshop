@@ -7,6 +7,7 @@ Lenke til slides:
 
 ## Installering
 
+* Installer Batarang - extension i Google Chrome.
 * Installer [node](http://nodejs.org/) med npm om du ikke har det.
 * Sjekk om grunt-cli er installert, om ikke installer det med `npm install grunt-cli`
 * Sjekk om karma-cli er installert, om ikke installer det med `npm install -g karma-cli`
