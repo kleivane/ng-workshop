@@ -859,6 +859,34 @@
 </section>
 
 <section class="slide">
+  <div class="">
+    <h2>Tips til neste oppgave:</h2>
+    <pre class="brush: js"> 
+      link: function(scope, element, attrs, ctrls) {
+      var en = true; //tilgjengelig i link-funksjonen
+      scope.to = false; //tilgjengelig i templatefil
+
+      scope.gjorNoe = function(){
+      ....
+    }
+  }
+</pre>
+<pre class="brush: html"> 
+  <!-- templatefilen -->
+  <input type="text" ng-blur="gjorNoe()">
+</pre>
+<p>Man kan legge på et nytt direktiv på et element i en templatefil </p>
+</div>
+</section>
+
+<section class="slide shout">
+  <div class="midtstilt">
+    <h2> Oppgavetid</h2>
+  </div>
+</section>
+
+
+<section class="slide">
   <div>
     <h2> Transclude</h2>
     <pre class="brush: js"> 
@@ -1022,26 +1050,6 @@
     }
   </pre>
 </div>
-</div>
-</section>
-<section class="slide">
-  <div class="">
-    <h2>Tips til neste oppgave:</h2>
-    <pre class="brush: js"> 
-      link: function(scope, element, attrs, ctrls) {
-      var en = true; //tilgjengelig i link-funksjonen
-      scope.to = false; //tilgjengelig i templatefil
-
-      scope.gjorNoe = function(){
-      ....
-    }
-  }
-</pre>
-<pre class="brush: html"> 
-  <!-- templatefilen -->
-  <input type="text" ng-blur="gjorNoe()">
-</pre>
-<p>Man kan legge på et nytt direktiv på et element i en templatefil </p>
 </div>
 </section>
 <section class="slide shout">
