@@ -591,6 +591,24 @@
   </div>
 </section>
 
+<section class="slide code">
+  <div>
+    <h2> Variabler på scope </h2>
+    <pre class="brush: js">
+      link: function(scope, element, attr) {
+      scope.skalVises = false;
+      scope.navn = "BEKK"
+    }
+  </pre>
+  <pre class="brush: html">
+    <div ng-show="skalVises">
+      ...
+    </div>
+    {{ navn }}
+  </pre>
+</div>
+</section>
+
 <section class="slide">
   <div>
     <h2>Oppgavetid!</h2>
@@ -826,23 +844,7 @@
 
 </div>
 </section>
-<section class="slide code">
-  <div>
-    <h2> Variabler på scopet </h2>
-    <pre class="brush: js">
-      link: function(scope, element, attr) {
-      scope.skalVises = false;
-      scope.navn = "BEKK"
-    }
-  </pre>
-  <pre class="brush: html">
-    <div ng-show="skalVises">
-      ...
-    </div>
-    {{ navn }}
-  </pre>
-</div>
-</section>
+
 
 <section class="slide shout">
   <div class="midtstilt">
