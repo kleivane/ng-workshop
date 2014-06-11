@@ -1,5 +1,5 @@
 angular.module('Scopeoppgave').directive('bookingDirektiv', function() {
-  return {
-    templateUrl: 'app/oppgave-scope/scopetemplate.html'
-  };
+  return {};
 });
+
+//TEMPLATE i fila scopetemplate.html
