@@ -127,6 +127,9 @@
         font-size: 33px;
       }
 
+      .slide .midten {
+        padding: 20% 15% 0;
+      }
       body .syntaxhighlighter .line {
         white-space: pre-wrap !important;
       }
@@ -979,21 +982,81 @@
     <h2> Oppgavetid</h2>
   </div>
 </section>
+<section class="slide shout">
+  <div class="midtstilt">
+    <h2>Formvalidering</h2>
+  </div>
+</section>
+<section class="slide shout">
+  <div class="midtstilt">
+    <ul class="kun-liste">
+      <li>ng-valid</li>
+      <li>ng-invalid</li>
+      <li>ng-pristine</li>
+      <li>ng-dirty</li>
+      <li>ng-touched</li>
+      <li>ng-untouched</li>
+    </ul>
+  </div>
+</section>
+<!-- ng-model legger på klassene -->
+
+<section class="slide shout">
+  <div class="midtstilt">
+    <ul class="kun-liste">
+      <li>required</li>
+      <li>pattern</li>
+      <li>minlength</li>
+      <li>maxlength</li>
+      <li>min</li>
+      <li>max</li>
+    </ul>
+  </div>
+</section>
+
 <section class="slide">
-  <div>
-    <h2> Transclude</h2>
-    <pre class="brush: js"> 
-     .directive('myDirective', function() {
-     return {
-     restrict: 'E',
-     transclude: true,
-     scope: {},
-     templateUrl: 'mytemplate.html',
-     link: function (scope, element) {
-   }
- };
-});
-</pre>
+  <div style="font-size: 0.9em;">
+    <pre class="brush: html">
+      <form name="form" class="css-form" novalidate>
+        <div>
+          Tall(0-10):
+          <input type="number" ng-model="size" name="size" min="0" max="10" integer/>
+          {{size}}
+          <span ng-show="form.size.$error.integer">Ikke gyldig tall</span>
+          <span ng-show="form.size.$error.min || form.size.$error.max">
+            Verdien må være mellom 0-10
+          </span>
+        </div>
+        <div>
+          Lengde (float):
+          <input type="text" ng-model="length" name="length" smart-float />
+            {{length}}<br/>
+            <span ng-show="form.length.$error.float">
+              Ikke gylding flyttall!
+            </span>
+        </div>
+      </form>
+    </pre>
+
+        <iframe class="demo" src="demos/formvalidering.html" style="position: absolute; bottom:0; right: 0; height:100px"></iframe>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2> Transclude</h2>
+        <pre class="brush: js"> 
+         .directive('myDirective', function() {
+         return {
+         restrict: 'E',
+         transclude: true,
+         scope: {},
+         templateUrl: 'mytemplate.html',
+         link: function (scope, element) {
+       }
+     };
+   });
+ </pre>
 </div>
 </section>
 <section class="slide">
@@ -1030,17 +1093,28 @@
 </section>
 
 <section class="slide">
-  <div>
-    <h2> Transclude</h2>
-    Skal vi si noe om transclude: element? 5. parameteren på link-funksjonen. Brukes for å hente transcluded-elementet
-  </div>
+  <div class="midten">
+    <h2> Transclude som funksjon:</h2>
+    <pre class="brush: js">
+      link: function(scope, element, attributes, ctrl, transclude) {
+      (...)
+    }
+  </pre>
+</div>
 </section>
 <section class="slide shout">
   <div class="midtstilt">
     <h2> Oppgavetid</h2>
   </div>
 </section>
-<!--  build:YEOMAN-GENERATOR-PLACEHOLDER -->
+<section class="slide">
+  <div>
+    <h2> Kilder:</h2>
+    <ul>
+      <li>https://docs.angularjs.org</li>
+    </div>
+  </section>
+  <!--  build:YEOMAN-GENERATOR-PLACEHOLDER -->
 <!--
     The line above is used by shower generator to insert slides. Please don't remove.
   -->
