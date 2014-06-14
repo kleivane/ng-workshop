@@ -221,7 +221,7 @@
             <!-- Angular is built around the belief that declarative code is better than imperative when it comes to building UIs and wiring software components together, while imperative code is excellent for expressing business logic. -->
             <li class="next">Toveis-databinding -> M & V synkronisert => mindre (manuell) dom-manipulering</li>
             <li class="next">Skille DOM manipulering fra applikasjonslogikk</li>
-            <li class="next">Skille clientside fra serverside (dependency injection)</li>
+            <li class="next">Dependency injection</li>
             <li class="next">Testing like viktig som å skrive kode (visjon?)</li>
           </ul>
         </div>
@@ -594,6 +594,45 @@
   </div>
 </section>
 
+<section class="slide code">
+  <div>
+    <h2> Variabler på scope </h2>
+    <pre class="brush: js">
+      link: function(scope, element, attr) {
+      scope.skalVises = false;
+      scope.navn = "BEKK"
+    }
+  </pre>
+  <pre class="brush: html">
+    <div ng-show="skalVises">
+      ...
+    </div>
+    {{ navn }}
+  </pre>
+</div>
+</section>
+
+
+<section class="slide">
+  <div>
+    <h2>Oppsett</h2>
+    <ul>
+      <li>node</li>
+      <li>Grunt</li>
+      <li>Plugins
+        <ul>
+         <li>konkatenering</li>
+         <li>bygging av templates</li>
+         <li>server</li>
+         <li>watcher endringer</li>
+       </ul>
+     </li>
+     <li>karma test runner</li>
+     <li>jasmine med angular-matchers</li>
+   </ul>
+ </div>
+</section>
+
 <section class="slide">
   <div>
     <h2>Oppgavetid!</h2>
@@ -602,6 +641,7 @@
     <a href="http://localhost:9090/app/#/">local</a>
   </div>
 </section>
+
 
 
 <section class="slide">
@@ -829,24 +869,104 @@
 
 </div>
 </section>
-<section class="slide code">
-  <div>
-    <h2> Variabler på scopet </h2>
-    <pre class="brush: js">
-      link: function(scope, element, attr) {
-      scope.skalVises = false;
-      scope.navn = "BEKK"
+
+
+<section class="slide shout">
+  <div class="midtstilt">
+    <h2> Oppgavetid</h2>
+  </div>
+</section>
+
+<section class="slide shout">
+  <div class="midtstilt">
+    <h2> Testing!</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="">
+    <h2>Tips til neste oppgave:</h2>
+    <pre class="brush: js"> 
+      link: function(scope, element, attrs, ctrls) {
+      var en = true; //tilgjengelig i link-funksjonen
+      scope.to = false; //tilgjengelig i templatefil
+
+      scope.gjorNoe = function(){
+      ....
     }
-  </pre>
-  <pre class="brush: html">
-    <div ng-show="skalVises">
-      ...
-    </div>
-    {{ navn }}
-  </pre>
+  }
+</pre>
+<pre class="brush: html"> 
+  <!-- templatefilen -->
+  <input type="text" ng-blur="gjorNoe()">
+</pre>
+<p>Man kan legge på et nytt direktiv på et element i en templatefil </p>
 </div>
 </section>
 
+<section class="slide shout">
+  <div class="midtstilt">
+    <h2> Oppgavetid</h2>
+  </div>
+</section>
+
+
+<section class="slide">
+  <div>
+    <h2> Transclude</h2>
+    <pre class="brush: js"> 
+     .directive('myDirective', function() {
+     return {
+     restrict: 'E',
+     transclude: true,
+     scope: {},
+     templateUrl: 'mytemplate.html',
+     link: function (scope, element) {
+   }
+ };
+});
+</pre>
+</div>
+</section>
+<section class="slide">
+  <div>
+    <h2> Transclude</h2>
+    <img src="img/transclude-true.png" style="width: 70%;" class="center" alt="">
+    <!--  http://www.angularjshub.com/examples/customdirectives/transclusion/ -->
+  </div>
+</section>
+<section class="slide">
+  <div>
+    <h2> Eksempel:</h2>
+    <pre class="brush: js">
+      bekkApp.directive("transcludeDirective", function() {
+      return { 
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: 
+      '<div>' +
+      '<h4>Dette er innhold fra templaten</h4>' +
+      '<div ng-transclude style="background: green;">' +
+      '</div>' +
+      '</div>' 
+    </pre>
+    <pre class="brush: html"> 
+      <transclude-directive>
+      <p>Dette er innholdet som stod her fra før</p>
+    </transclude-directive>
+  </pre>
+  <iframe class="demo" src="demos/transclude.html" style="position: absolute; bottom:0; right: 0; height:100px"></iframe>
+
+</div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2> Transclude</h2>
+    Skal vi si noe om transclude: element? 5. parameteren på link-funksjonen. Brukes for å hente transcluded-elementet
+  </div>
+</section>
 <section class="slide shout">
   <div class="midtstilt">
     <h2> Oppgavetid</h2>
@@ -957,26 +1077,6 @@
 </div>
 </div>
 </section>
-<section class="slide">
-  <div class="">
-    <h2>Tips til neste oppgave:</h2>
-    <pre class="brush: js"> 
-      link: function(scope, element, attrs, ctrls) {
-      var en = true; //tilgjengelig i link-funksjonen
-      scope.to = false; //tilgjengelig i templatefil
-
-      scope.gjorNoe = function(){
-      ....
-    }
-  }
-</pre>
-<pre class="brush: html"> 
-  <!-- templatefilen -->
-  <input type="text" ng-blur="gjorNoe()">
-</pre>
-<p>Man kan legge på et nytt direktiv på et element i en templatefil </p>
-</div>
-</section>
 <section class="slide shout">
   <div class="midtstilt">
     <h2> Oppgavetid</h2>
@@ -1030,33 +1130,33 @@
         <div>
           Lengde (float):
           <input type="text" ng-model="length" name="length" smart-float />
-            {{length}}<br/>
-            <span ng-show="form.length.$error.float">
-              Ikke gylding flyttall!
-            </span>
+          {{length}}<br/>
+          <span ng-show="form.length.$error.float">
+            Ikke gylding flyttall!
+          </span>
         </div>
       </form>
     </pre>
 
-        <iframe class="demo" src="demos/formvalidering.html" style="position: absolute; bottom:0; right: 0; height:100px"></iframe>
-      </div>
-    </section>
+    <iframe class="demo" src="demos/formvalidering.html" style="position: absolute; bottom:0; right: 0; height:100px"></iframe>
+  </div>
+</section>
 
-    <section class="slide">
-      <div>
-        <h2> Transclude</h2>
-        <pre class="brush: js"> 
-         .directive('myDirective', function() {
-         return {
-         restrict: 'E',
-         transclude: true,
-         scope: {},
-         templateUrl: 'mytemplate.html',
-         link: function (scope, element) {
-       }
-     };
-   });
- </pre>
+<section class="slide">
+  <div>
+    <h2> Transclude</h2>
+    <pre class="brush: js"> 
+     .directive('myDirective', function() {
+     return {
+     restrict: 'E',
+     transclude: true,
+     scope: {},
+     templateUrl: 'mytemplate.html',
+     link: function (scope, element) {
+   }
+ };
+});
+</pre>
 </div>
 </section>
 <section class="slide">
@@ -1105,6 +1205,23 @@
 <section class="slide shout">
   <div class="midtstilt">
     <h2> Oppgavetid</h2>
+  </div>
+</section>
+<section class="slide">
+  <div class="midtstilt">
+    <h2>Flere oppgaver?</h2>
+    <ul><li>Sjekk ut unicorn-direktivet eller markdown-direktivet til btford (angular-core-developer) som ligger bundlet med kildekoden vår.</li>
+      <li>Prøv å lag nye directives:
+        <ul>
+          <li>Spinner-attributt som dekker diven den ligger på </li>
+          <li>Utvid menyen i templaten</li>
+          <li>Lag og test et direktiv som henter html fra backend. Det skal kunne ta inn ett error-callback dersom noe går galt </li>
+          <li>Noe som passer på prosjektet ditt?</li>
+        </ul>
+      </li>
+      <li>Sjekk ut templateCachen og hvordan grunt brukes til å bygge inn disse.</li>
+      <li>Fortsett på formoppgaven med tester og la den sende inn httpkall som mockes med $httpBackend</li>
+    </ul>
   </div>
 </section>
 <section class="slide">

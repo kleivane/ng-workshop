@@ -1,13 +1,10 @@
 <div>
 	<h2>Form - Testing av direktiver</h2>
 
-	<span rating/>
+Stjerneeksempel:
 
-	<radiogroup name="1">				
-      <radio id="orange" label="Red" accesskey="R"/>
-	  <radio id="violet" label="Green"  accesskey="G" selected="true"/>
-	  <radio id="yellow" label="Blue"  accesskey="B" disabled="true"/>
-	</radiogroup>	
+<i class="fa fa-2 fa-star"/>
+<i class="fa fa-2 fa-star-o"/>
 
 <btf-markdown>
 
@@ -15,7 +12,13 @@ Direktivet:
 
 &lt;`span rating`&gt;
 
+I dette direktivet skal vi lage tester og en ny modul med direktiv samtidig. Tips er å ta i bruk ng-class (ternary), ng-repeat og ng-click etterhvert. Det er ikke gitt noe innhold i hverken form-module.js eller form-directive.js, så modulen og direktivet må opprettes og inkluderes der det trengs.
 
+Testene finner du i form-directive_test.js. De kjører i nettleseren på `grunt test:live`, kontinuerlig med `grunt test:cont` og en gang på `grunt test`.
+
+Direktivet skal kunne brukes til å gi en score fra 1 - 5 stjerner med feks radiobuttions med verdier 1-5. Stjernene skal være ufylt, men når de klikkes på skal denne og alle stjernene til venstre for denne fylles.
+
+I denne oppgaven skal du gjøre ferdig testene i form-directive_test.js og utvikle direktivet parallellt.
 
 </btf-markdown>
 </div>
