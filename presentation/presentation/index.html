@@ -272,11 +272,42 @@
         <div class="midtstilt">
           <h2 style="font-size:75px;"> CreateReadUpdateDelete </h2>
         </div>
+              <!-- ikke grafikktunge apper eller spill -->
       </section>
-
-      <!-- ikke grafikktunge apper eller spill -->
       <section class="slide shout">
-        <div>
+        <div class="midtstilt">
+          <h2 style="font-size:75px;"> Moduler </h2>
+          <div style="position: absolute; top: 50%; left:29%;">
+          <pre class="brush: js">
+            angular.module('myModule', []).
+          </pre>
+        </div>
+        </div>
+      </section>
+      <section class="slide shout">
+        <div class="midtstilt">
+          <h2 style="font-size:44px; width: 79%; left:12%;">Tenk på en modul som noe som inneholder ulike deler av appen din </h2>
+          <ul style="position: absolute; top:52%; left:45%;">
+            <li>Controllers</li>
+            <li>Directives</li>
+            <li>Filters</li>
+            <li>Services</li>
+            <li>...</li>
+          </ul>
+      </section>
+       <section class="slide">
+        <div style="padding: 20% 36% 0;">
+          <h2>Fordeler:</h2>
+          <ul class="midtstilt-liste">
+            <li>Deklarativt - lettere å forstå</li>
+            <li>Gjennbrukbarhet</li>
+            <li>Lastes i hvilken som helst rekkefølge</li>
+            <li>Bra for testing</li>
+          </ul>
+        </div>
+      </section>
+      <section class="slide shout">
+        <div class="midtstilt">
           <h2><code><mark>directive</mark></code></h2>
         </div>
       </section>
@@ -666,12 +697,12 @@
     Egen service:
     <pre class="brush: js">
       myApp.provider('greeting', function() {
-        this.$get = function() {
-          return function(name) {
-            alert("Hello, " + name);
-          };
-        };
-      });
+      this.$get = function() {
+      return function(name) {
+      alert("Hello, " + name);
+    };
+  };
+});
 </pre>
 
 $injector - som faktisk opprettet instansene av servicene
@@ -694,7 +725,7 @@ $injector - som faktisk opprettet instansene av servicene
       <input type="text" ng-model="navn">
     </pre>
 
-     <iframe class="demo" src="demos/ngmodel.html" style="position: relative; width:40%; height: 30%;"></iframe>
+    <iframe class="demo" src="demos/ngmodel.html" style="position: relative; width:40%; height: 30%;"></iframe>
   </div>
 </section>
 
