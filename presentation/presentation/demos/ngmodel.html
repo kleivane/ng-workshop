@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-model</title>
+    <script src="js/angular/angular.js"></script>
+   <script>
+      angular.module('bekkApp', []);
+   </script>
+</head>
+<body>
+
+<div ng-app="bekkApp">
+    Hva heter du? <br/> <input type="text" ng-model="navn"> <br/><br/><br/>
+    Hei {{navn}} :D
+</div>
+
+</body>
+</html>
