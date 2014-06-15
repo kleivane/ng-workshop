@@ -25,7 +25,7 @@
           .slide > div {
             padding: 40px 70px 0;
           }
-          .slide .midtstilt {
+          .slide.shout div {
             padding: 105px 120px 0;
           }
           .slide h2 {
@@ -91,12 +91,12 @@
          /*color:#000;*/
        }
 
-       .shout .midtstilt h2 {
+       .shout .midtstilt h2, .slide.shout div h2 {
         top: 40%;
       }
       .shout p {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 0;
         width: 100%;
         text-align: center;
@@ -211,12 +211,12 @@
       </section>
       <section class="slide shout">
         <div class="midtstilt">
-          <h2 style="font-size: 40px;"> Filosofi & Designmål</h2>
+          <h2 style="font-size: 70px;"> Filosofi & Designmål</h2>
         </div>
       </section>
-      <section class="slide">
+      <section class="slide shout">
         <div class="midtstilt">
-          <ul style=" width: 80%; float: left;">
+          <ul class="kun-liste" style=" width: 80%; font-size:30px; left:20%;">
             <li class="next">Deklarativt</li>
             <!-- Angular is built around the belief that declarative code is better than imperative when it comes to building UIs and wiring software components together, while imperative code is excellent for expressing business logic. -->
             <li class="next">Toveis-databinding -> M & V synkronisert => mindre (manuell) dom-manipulering</li>
@@ -228,280 +228,280 @@
       </section>
       <section class="slide shout">
         <div class="midtstilt">
-          <h2 style="font-size: 40px;">+</h2>
+          <h2 style="font-size: 30em;">+</h2>
         </div>
       </section>
 
-      <section class="slide">
-        <div class="midtstilt">
-         <ul style=" width: 50%; float: left;">
-          <li class="next">Slipper registrering av callbacks</li>
-          <!-- Registering callbacks clutters your code, making it hard to see the forest for the trees. Removing common boilerplate code such as callbacks is a good thing. It vastly reduces the amount of JavaScript coding you have to do, and it makes it easier to see what your application does. -->
-          <li class="next">Manipulering av HTML DOM gjøres programatisk</li>
-          <!-- Manipulating HTML DOM is a cornerstone of AJAX applications, but it's cumbersome and error-prone. By declaratively describing how the UI should change as your application state changes, you are freed from low-level DOM manipulation tasks. Most applications written with Angular never have to programmatically manipulate the DOM, although you can if you want to. -->
-          <li class="next">Konvertere data/input mellom view og modell</li>
-          <!-- CRUD operations make up the majority of AJAX applications' tasks. The flow of marshaling data from the server to an internal object to an HTML form, allowing users to modify the form, validating the form, displaying validation errors, returning to an internal model, and then back to the server, creates a lot of boilerplate code. Angular eliminates almost all of this boilerplate, leaving code that describes the overall flow of the application rather than all of the implementation details.-->
-          <li class="next">Slipper å skrive et tonn med kode for å komme i gang</li>
-          <!-- Typically you need to write a lot of plumbing just to get a basic "Hello World" AJAX app working. With Angular you can bootstrap your app easily using services, which are auto-injected into your application in a Guice-like dependency-injection style. This allows you to get started developing features quickly. As a bonus, you get full control over the initialization process in automated tests.-->
-        </div>
-      </section>
       <section class="slide shout">
         <div class="midtstilt">
-          <h2 style="font-size: 40px;">-</h2>
-        </div>
-      </section>
-
-      <section class="slide">
-        <div class="midtstilt">
-         <ul style=" width: 50%; float: left;">
-          <li class="next">Dårlig dokumentasjon og komplekst API</li>
-          <li class="next">Ikke alt som er like intuitivt og få konvesjoner</li>
-          <li class="next">Enkelte direktiver som skalerer dårlig mtp mobil</li>
-
-        </div>
-      </section>
-
-
-      <!-- http://en.wikipedia.org/wiki/AngularJS -->
-      <section class="slide shout">
-        <div class="midtstilt">
-          <h2 style="font-size:75px;"> Når skal Angular brukes og ikke brukes? </h2>
-        </div>
-      </section>
-      <section class="slide shout">
-        <div class="midtstilt">
-          <h2 style="font-size:75px;"> CreateReadUpdateDelete </h2>
-        </div>
-              <!-- ikke grafikktunge apper eller spill -->
-      </section>
-      <section class="slide shout">
-        <div class="midtstilt">
-          <h2 style="font-size:75px;"> Moduler </h2>
-          <div style="position: absolute; top: 50%; left:29%;">
-          <pre class="brush: js">
-            angular.module('myModule', []).
-          </pre>
-        </div>
-        </div>
-      </section>
-      <section class="slide shout">
-        <div class="midtstilt">
-          <h2 style="font-size:44px; width: 79%; left:12%;">Tenk på en modul som noe som inneholder ulike deler av appen din </h2>
-          <ul style="position: absolute; top:52%; left:45%;">
-            <li>Controllers</li>
-            <li>Directives</li>
-            <li>Filters</li>
-            <li>Services</li>
-            <li>...</li>
-          </ul>
-      </section>
-       <section class="slide">
-        <div style="padding: 20% 36% 0;">
-          <h2>Fordeler:</h2>
-          <ul class="midtstilt-liste">
-            <li>Deklarativt - lettere å forstå</li>
-            <li>Gjennbrukbarhet</li>
-            <li>Lastes i hvilken som helst rekkefølge</li>
-            <li>Bra for testing</li>
-          </ul>
-        </div>
-      </section>
-      <section class="slide shout">
-        <div class="midtstilt">
-          <h2><code><mark>directive</mark></code></h2>
-        </div>
-      </section>
-      <section class="slide">
-        <div>
-          <!-- Forklare hva direktiver faktisk er og hvorfor det er en sentral del av Angular kan nok være lurt. -->
-          <h2>Direktiver er vanskelige å forklare</h2>
-        </div>
-      </section> 
-      <section class="slide">
-        <div>
-          <h2><span style="text-decoration: line-through;">Direktiver</span>HTML-elementer er vanskelige å forklare.</h2>
-
-          <pre class="brush: js">
-
-            <a href="https://www.google.com/">Søk</a>
-
-            <span>Innhold</span>
-
-            <div class="content">Innhold</div>
-
-            <h2>Overskrift</h2>
-          </pre>
-        </div>
-      </section> 
-      <section class="slide">
-        <div>
-          <h2>Direktiver = egne html-definisjoner </h2>
-          <div>
-            <ul>
-              <li>Direktiver er en funksjon som kan utrette det du klarer å programmere, så en definisjon er vanskelig.</li>
-              <li>Funksjonen til er direktiv kjøres når Angular-kompilatoren finner direktivet referert i DOMen.</li>
-              <li>De bestemmer selv hvordan direktive skal refereres, slik som html</li>
-            </ul>
+          <ul class="kun-liste" style=" width: 80%; font-size:30px; left:20%;">
+            <li class="next">Slipper registrering av callbacks</li>
+            <!-- Registering callbacks clutters your code, making it hard to see the forest for the trees. Removing common boilerplate code such as callbacks is a good thing. It vastly reduces the amount of JavaScript coding you have to do, and it makes it easier to see what your application does. -->
+            <li class="next">Manipulering av HTML DOM gjøres programatisk</li>
+            <!-- Manipulating HTML DOM is a cornerstone of AJAX applications, but it's cumbersome and error-prone. By declaratively describing how the UI should change as your application state changes, you are freed from low-level DOM manipulation tasks. Most applications written with Angular never have to programmatically manipulate the DOM, although you can if you want to. -->
+            <li class="next">Konvertere data/input mellom view og modell</li>
+            <!-- CRUD operations make up the majority of AJAX applications' tasks. The flow of marshaling data from the server to an internal object to an HTML form, allowing users to modify the form, validating the form, displaying validation errors, returning to an internal model, and then back to the server, creates a lot of boilerplate code. Angular eliminates almost all of this boilerplate, leaving code that describes the overall flow of the application rather than all of the implementation details.-->
+            <li class="next">Slipper å skrive et tonn med kode for å komme i gang</li>
+            <!-- Typically you need to write a lot of plumbing just to get a basic "Hello World" AJAX app working. With Angular you can bootstrap your app easily using services, which are auto-injected into your application in a Guice-like dependency-injection style. This allows you to get started developing features quickly. As a bonus, you get full control over the initialization process in automated tests.-->
           </div>
-        </section> 
-        <section class="slide">
-          <div>
-            <h2>Hvorfor vil vi bruke det?</h2>
+        </section>
+        <section class="slide shout">
+          <div class="midtstilt">
+            <h2 style="font-size: 30em;">-</h2>
+          </div>
+        </section>
 
-            <ul>
-              <li>Utvider HTML til noe mer sematisk med mulighet for tilpasning til domenet</li>
-              <li>Unngår repetisjon</li>
-            </ul>
+        <section class="slide shout">
+          <div class="midtstilt">
+            <ul class="kun-liste" style=" width: 80%; font-size:30px; left:20%;">
+              <li class="next">Dårlig dokumentasjon og komplekst API</li>
+              <li class="next">Ikke alt som er like intuitivt og få konvesjoner</li>
+              <li class="next">Enkelte direktiver som skalerer dårlig mtp mobil</li>
 
-          </section> 
-          <section class="slide">
-            <div>
-              <h2>Direktiver i praksis</h2>
+            </div>
+          </section>
 
-              <ul>
-                <li>Er foretrukne måte å få tak i DOM-elementer på i Angular</li>
-                <li>Gir mulighet til å binde brukerevents, click, submit osv. </li>
-                <li>Skrive ut data</li>
-              </ul>
 
-            </section> 
-            <section class="slide">
-              <div>
-                <h2>Built in directives</h2>
-                <pre class="brush: html">
-                  <input type="text" ng-model="name">
-                  <div ng-show="name == 'bekk'">
-                    Til vanlig er jeg usynlig
-                  </div>
+          <!-- http://en.wikipedia.org/wiki/AngularJS -->
+          <section class="slide shout">
+            <div class="midtstilt">
+              <h2 style="font-size:75px;"> Når skal Angular brukes og ikke brukes? </h2>
+            </div>
+          </section>
+          <section class="slide shout">
+            <div class="midtstilt">
+              <h2 style="font-size:75px;"> CreateReadUpdateDelete </h2>
+            </div>
+            <!-- ikke grafikktunge apper eller spill -->
+          </section>
+          <section class="slide shout">
+            <div class="midtstilt">
+              <h2 style="font-size:75px;"> Moduler </h2>
+              <div style="position: absolute; top: 50%; left:29%;">
+                <pre class="brush: js">
+                  angular.module('myModule', []).
                 </pre>
-                <iframe class="demo" src="demos/ng-directives.html" style="position: relative;"></iframe>
               </div>
+            </div>
+          </section>
+          <section class="slide shout">
+            <div class="midtstilt">
+              <h2 style="font-size:44px; width: 79%; left:12%; top:30%">Tenk på en modul som noe som inneholder ulike deler av appen din </h2>
+              <ul class="next" style="position: absolute; top:40%; left:45%;">
+                <li>Controllers</li>
+                <li>Directives</li>
+                <li>Filters</li>
+                <li>Services</li>
+                <li>...</li>
+              </ul>
             </section>
-
-            <section class="slide">
-              <div>
-                <h2>Built in directives</h2>
-
-                <ul style=" width: 50%; float: left;">
-                  <li class="next">ngApp</li>
-                  <li class="next">ngModel</li>
-                  <li class="next">ngController</li>
-                  <li class="next">ngClick</li>
-                  <li class="next">ngChange</li>
-                  <li class="next">ngBlur</li>
-                </ul> 
-                <ul>
-                  <li class="next">ngFocus</li>
-                  <li class="next">ngClass</li>
-                  <li class="next">ngStyle</li>
-                  <li class="next">ngRepeat</li>
-                  <li class="next">...</li>
+            <section class="slide shout">
+              <div class="midtstilt">
+                <h2 style="font-size: 3em; top:30%;">Fordeler:</h2>
+                <ul style="position: absolute; top:40%; left:40%;">
+                  <li>Deklarativt - lettere å forstå</li>
+                  <li>Gjennbrukbarhet</li>
+                  <li>Lastes i hvilken som helst rekkefølge</li>
+                  <li>Bra for testing</li>
                 </ul>
               </div>
             </section>
             <section class="slide shout">
+              <div class="midtstilt">
+                <h2><code><mark>directive</mark></code></h2>
+              </div>
+            </section>
+            <section class="slide">
               <div>
-                <h2> <a href="https://github.com/angular/angular.js/blob/master/src/ng/directive/ngShowHide.js#L168">ng-show </a></h2>
+                <!-- Forklare hva direktiver faktisk er og hvorfor det er en sentral del av Angular kan nok være lurt. -->
+                <h2>Direktiver er vanskelige å forklare</h2>
+              </div>
+            </section> 
+            <section class="slide">
+              <div>
+                <h2><span style="text-decoration: line-through;">Direktiver</span>HTML-elementer er vanskelige å forklare.</h2>
+
+                <pre class="brush: js">
+
+                  <a href="https://www.google.com/">Søk</a>
+
+                  <span>Innhold</span>
+
+                  <div class="content">Innhold</div>
+
+                  <h2>Overskrift</h2>
+                </pre>
+              </div>
+            </section> 
+            <section class="slide">
+              <div>
+                <h2>Direktiver = egne html-definisjoner </h2>
+                <div>
+                  <ul>
+                    <li>Direktiver er en funksjon som kan utrette det du klarer å programmere, så en definisjon er vanskelig.</li>
+                    <li>Funksjonen til er direktiv kjøres når Angular-kompilatoren finner direktivet referert i DOMen.</li>
+                    <li>De bestemmer selv hvordan direktive skal refereres, slik som html</li>
+                  </ul>
+                </div>
+              </section> 
+              <section class="slide">
+                <div>
+                  <h2>Hvorfor vil vi bruke det?</h2>
+
+                  <ul>
+                    <li>Utvider HTML til noe mer sematisk med mulighet for tilpasning til domenet</li>
+                    <li>Unngår repetisjon</li>
+                  </ul>
+
+                </section> 
+                <section class="slide">
+                  <div>
+                    <h2>Direktiver i praksis</h2>
+
+                    <ul>
+                      <li>Er foretrukne måte å få tak i DOM-elementer på i Angular</li>
+                      <li>Gir mulighet til å binde brukerevents, click, submit osv. </li>
+                      <li>Skrive ut data</li>
+                    </ul>
+
+                  </section> 
+                  <section class="slide">
+                    <div>
+                      <h2>Built in directives</h2>
+                      <pre class="brush: html">
+                        <input type="text" ng-model="name">
+                        <div ng-show="name == 'bekk'">
+                          Til vanlig er jeg usynlig
+                        </div>
+                      </pre>
+                      <iframe class="demo" src="demos/ng-directives.html" style="position: relative;"></iframe>
+                    </div>
+                  </section>
+
+                  <section class="slide">
+                    <div>
+                      <h2>Built in directives</h2>
+
+                      <ul style=" width: 50%; float: left;">
+                        <li class="next">ngApp</li>
+                        <li class="next">ngModel</li>
+                        <li class="next">ngController</li>
+                        <li class="next">ngClick</li>
+                        <li class="next">ngChange</li>
+                        <li class="next">ngBlur</li>
+                      </ul> 
+                      <ul>
+                        <li class="next">ngFocus</li>
+                        <li class="next">ngClass</li>
+                        <li class="next">ngStyle</li>
+                        <li class="next">ngRepeat</li>
+                        <li class="next">...</li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section class="slide shout">
+                    <div>
+                      <h2> <a href="https://github.com/angular/angular.js/blob/master/src/ng/directive/ngShowHide.js#L168">ng-show </a></h2>
+                    </div>
+                  </section>
+
+                  <section class="slide">
+                    <div>
+                      <h2>Egne direktiver</h2>
+
+                      <ul>
+                        <li>er ikke skumlere enn de innebygde, du bruker dem hele tiden!</li>
+                      </ul>
+                    </div>
+                  </section>
+
+                  <section class="slide">
+                    <div>
+                     <h2>Egne direktiver</h2>
+
+                     <pre class="brush: js">
+                      myApp.directive('myDirective', function(dep1, dep2) {
+                      return {
+                      /**
+                      *
+                      *
+                      *
+                      *
+                      * API
+                      *
+                      *
+                      *
+                      *
+                      **/
+                    }
+                  });
+                </pre>
+
+                <pre class="brush: html">
+                  <my-directive></my-directive>
+                </pre>
               </div>
             </section>
 
             <section class="slide">
               <div>
-                <h2>Egne direktiver</h2>
+               <h2>Egne direktiver - casing</h2>
 
-                <ul>
-                  <li>er ikke skumlere enn de innebygde, du bruker dem hele tiden!</li>
-                </ul>
-              </div>
-            </section>
-
-            <section class="slide">
-              <div>
-               <h2>Egne direktiver</h2>
+               <p>Camel case blir til train-case</p>
 
                <pre class="brush: js">
-                myApp.directive('myDirective', function(dep1, dep2) {
-                return {
-                /**
-                *
-                *
-                *
-                *
-                * API
-                *
-                *
-                *
-                *
-                **/
-              }
-            });
-          </pre>
+                myApp.directive('ngTextArea', function(dep1, dep2) { //.....
 
-          <pre class="brush: html">
-            <my-directive></my-directive>
-          </pre>
-        </div>
-      </section>
+                <ng-text-area></ng-text-area>
 
-      <section class="slide">
-        <div>
-         <h2>Egne direktiver - casing</h2>
+              </pre>
 
-         <p>Camel case blir til train-case</p>
 
-         <pre class="brush: js">
-          myApp.directive('ngTextArea', function(dep1, dep2) { //.....
+              <pre class="brush: js">
+                myApp.directive('gjeInformasjonstekst', function(dep1, dep2) { /..
 
-          <ng-text-area></ng-text-area>
+                <gje-informasjonstekst></gje-informasjonstekst>
 
+              </pre>
+
+              <pre class="brush: js">
+                myApp.directive('navFormSection', function(dep1, dep2) { //..
+
+                <nav-form-section></nav-form-section>
+              </pre>
+            </div>
+          </section>
+
+          <section class="slide">
+            <div>
+             <h2>Egne direktiver - navngivning</h2>
+
+             <p>ng-prefikset er reservert til bruk i Angular</p>
+
+             <pre class="brush: js">
+              myApp.directive('ngTextArea', function(dep1, dep2) {
+              return {
+              /** API **/
+            }
+          });
         </pre>
 
+        Vi prefikser gjerne med firma/domene etc
 
         <pre class="brush: js">
-          myApp.directive('gjeInformasjonstekst', function(dep1, dep2) { /..
+          myApp.directive('gjeInformasjonstekst', function(dep1, dep2) {
+          return {
+          /** API **/
+        }
+      });
+    </pre>
 
-          <gje-informasjonstekst></gje-informasjonstekst>
-
-        </pre>
-
-        <pre class="brush: js">
-          myApp.directive('navFormSection', function(dep1, dep2) { //..
-
-          <nav-form-section></nav-form-section>
-        </pre>
-      </div>
-    </section>
-
-    <section class="slide">
-      <div>
-       <h2>Egne direktiver - navngivning</h2>
-
-       <p>ng-prefikset er reservert til bruk i Angular</p>
-
-       <pre class="brush: js">
-        myApp.directive('ngTextArea', function(dep1, dep2) {
-        return {
-        /** API **/
-      }
-    });
-  </pre>
-
-  Vi prefikser gjerne med firma/domene etc
-
-  <pre class="brush: js">
-    myApp.directive('gjeInformasjonstekst', function(dep1, dep2) {
-    return {
-    /** API **/
-  }
-});
-</pre>
-
-<pre class="brush: js">
-  myApp.directive('navFormSection', function(dep1, dep2) {
-  return {
-  /** API **/
-}
-});
+    <pre class="brush: js">
+      myApp.directive('navFormSection', function(dep1, dep2) {
+      return {
+      /** API **/
+    }
+  });
 </pre>
 </div>
 </section>
@@ -689,7 +689,7 @@
   </div>
 </section>
 <section class="slide">
-  <div class="midten">
+  <div>
     <pre class="brush: js">
       .directive('ngGithub', ['$http', function($http){
     </pre>
@@ -719,14 +719,14 @@ $injector - som faktisk opprettet instansene av servicene
   </div>
 </section>
 <section class="slide">
-  <div class="midten">
-    <pre class="brush: html">
-      Hva heter du?
-      <input type="text" ng-model="navn">
-    </pre>
+  <div style="padding: 80px 29% 0; width: 70%;">
+  <pre class="brush: html">
+    Hva heter du?
+    <input type="text" ng-model="navn">
+  </pre>
 
-    <iframe class="demo" src="demos/ngmodel.html" style="position: relative; width:40%; height: 30%;"></iframe>
-  </div>
+  <iframe class="demo" src="demos/ngmodel.html" style="position: relative; width:40%; height: 30%;"></iframe>
+</div>
 </section>
 
 <!-- ng-modell representerer modellen, kobling mellom viewet, ansvarlig for å sette på valideringsklasse og tilby validering- ng-valig osv. toveisdatabindingen-->
@@ -744,14 +744,14 @@ $injector - som faktisk opprettet instansene av servicene
 </section>
 <section class="slide shout">
   <div class="midtstilt">
-    <h2 style="font-size: 40px;"> Objekter som referer til applikasjonsmodellen </h2>
-    <p>Controller  -&gt; <code><mark>$scope</mark></code> &lt;- View </p>
+    <h2 style="font-size: 40px; top:30%;"> Objekter som referer til applikasjonsmodellen </h2>
+    <p style="top:40%;">Controller  -&gt; <code><mark>$scope</mark></code> &lt;- View </p>
   </div>
 </section>
 <section class="slide shout">
   <div class="midtstilt">
-    <h2 style="font-size: 40px;">Evaluering av uttrykk </h2>
-    <ul class="midtstilt-liste">
+    <h2 style="font-size: 40px; top:30%;">Evaluering av uttrykk </h2>
+    <ul style="top:40%;" class="midtstilt-liste">
       <li><code>1+2={{1+2}}</code> -> 1+2=3</li>
       <li><code>{{username}}</code> -> ingvilin</li>
     </ul> 
@@ -1115,7 +1115,7 @@ $injector - som faktisk opprettet instansene av servicene
 <section class="slide">
   <div class="midtstilt">
     <h2 style="text-align: center;"> $digest </h2>
-    <ol>
+    <ol style="margin-left: 20%">
       <li> En event trigges </li>
       <li> Vanlig JS-handlere eksekveres</li>
       <li> Hvis innenfor angular-contexten:</li>
@@ -1128,7 +1128,7 @@ $injector - som faktisk opprettet instansene av servicene
 </section>
 <section class="slide shout">
   <div class="midtstilt">
-    <h2 style="text-align: center; font-size: 80px;"> scope.$apply() </h2>
+    <h2 style="text-align: center; font-size: 80px; top:30%;"> scope.$apply() </h2>
     <p> "Hey, kjør en digest-loop!" </p>
   </div>
  <!--F.eks binder et element til å kjøre på click, og den har ansvar for å oppdatere angularelement, må kalle
@@ -1136,13 +1136,13 @@ $injector - som faktisk opprettet instansene av servicene
 </section>
 <section class="slide shout">
   <div class="midtstilt">
-    <h2 style="text-align: center; font-size: 40px;"> Tilbake til directive-apiet:</h2>
+    <h2 style="text-align: center; font-size: 40px; top:30%"> Tilbake til directive-apiet:</h2>
     <p> -require </p>
   </div>
 </section>
-<section class="slide shout">
-  <div class="midtstilt">
-    <div class="kun-kode">
+<section class="slide">
+  <div style="padding: 13% 20% 0;">
+    <div>
      <pre class="brush: js"> 
       .directive('myDirective', function() {
       return {
@@ -1162,7 +1162,7 @@ $injector - som faktisk opprettet instansene av servicene
 </section>
 <section class="slide shout">
   <div class="midtstilt">
-    <h2>Formvalidering</h2>
+    <h2 style="font-size:5em;">Formvalidering</h2>
   </div>
 </section>
 <section class="slide shout">
