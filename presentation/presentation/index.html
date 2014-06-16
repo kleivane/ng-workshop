@@ -683,6 +683,23 @@
 
 <section class="slide">
   <div>
+   <h2>template og templateUrl</h2>
+   <pre class="brush: js">
+    myApp.directive('myDirective', function(dep1, dep2) {
+      return {
+          //..
+
+        templateUrl: 'path/to/external/template.html',
+        template: '<a class="button button-large">Klikk her</a>',
+
+      };
+    });
+</pre>
+</div>
+</section>
+
+<section class="slide">
+  <div>
     <h2>link</h2>
     <pre class="brush: js">
       myApp.directive('myDirective', function(dep1, dep2) {
