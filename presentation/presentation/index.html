@@ -965,7 +965,7 @@ $injector - som faktisk opprettet instansene av servicene
   <div>
     <h2>Hvordan tester vi?</h2>
     <ul>
-      <li>Inkludere angular-mocks</li>
+      <li>Inkludere <a href="https://docs.angularjs.org/api/ngMock">angular-mocks</a></li>
       <li>Bruker karma test runner, se oppsett i karma.conf.js og gruntfile</li>
       <li>Bruker et testrammeverk til å skrive testene, Jasmine</li>
       <li>Bruker både unit-tester og e2e-tester</li>
@@ -996,6 +996,22 @@ $injector - som faktisk opprettet instansene av servicene
       })  
       </pre>
       En enkelt test kan kjøres med å kalle funksjonen <code>iit</code> i stedet for <code>it</code>.
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Angular-testing</h2>
+    <div>Modulene som skal være tilgjengelig må lastes med <a href="https://docs.angularjs.org/api/ngMock/function/angular.mock.module">module</a>:
+    <code>beforeEach(module('min-modul'));</code>
+    </div>
+    <div>
+    Templates som hentes gjennom templateUrl må lastes som moduler:
+    <code>beforeEach(module('app/direktiv-template'));</code>
+    </div>
+    <div>
+     Man kan bruke funksjonen <a href="https://docs.angularjs.org/api/ngMock/function/angular.mock.inject">inject</a> for å få tak i andre Angular-moduler. Noen moduler er for eksempel <a href="https://docs.angularjs.org/api/ng/service/$httpBackend">$httpBackend</a> som kan mocke http-kall og returer i tester.
+     </div>
   </div>
 </section>
 
