@@ -1094,10 +1094,14 @@ $injector - som faktisk opprettet instansene av servicene
 </section>
 
 <section class="slide">
-  <div>
-    <h2> Transclude</h2>
-    Skal vi si noe om transclude: element? 5. parameteren på link-funksjonen. Brukes for å hente transcluded-elementet
-  </div>
+  <div class="midten">
+    <h2> Transclude som funksjon:</h2>
+    <pre class="brush: js">
+      link: function(scope, element, attributes, ctrl, transclude) {
+      (...)
+    }
+  </pre>
+</div>
 </section>
 <section class="slide shout">
   <div class="midtstilt">
@@ -1274,66 +1278,7 @@ $injector - som faktisk opprettet instansene av servicene
   </div>
 </section>
 
-<section class="slide">
-  <div>
-    <h2> Transclude</h2>
-    <pre class="brush: js"> 
-     .directive('myDirective', function() {
-     return {
-     restrict: 'E',
-     transclude: true,
-     scope: {},
-     templateUrl: 'mytemplate.html',
-     link: function (scope, element) {
-   }
- };
-});
-</pre>
-</div>
-</section>
-<section class="slide">
-  <div>
-    <h2> Transclude</h2>
-    <img src="img/transclude-true.png" style="width: 70%;" class="center" alt="">
-    <!--  http://www.angularjshub.com/examples/customdirectives/transclusion/ -->
-  </div>
-</section>
-<section class="slide">
-  <div>
-    <h2> Eksempel:</h2>
-    <pre class="brush: js">
-      bekkApp.directive("transcludeDirective", function() {
-      return { 
-      restrict: 'E',
-      replace: true,
-      transclude: true,
-      template: 
-      '<div>' +
-      '<h4>Dette er innhold fra templaten</h4>' +
-      '<div ng-transclude style="background: green;">' +
-      '</div>' +
-      '</div>' 
-    </pre>
-    <pre class="brush: html"> 
-      <transclude-directive>
-      <p>Dette er innholdet som stod her fra før</p>
-    </transclude-directive>
-  </pre>
-  <iframe class="demo" src="demos/transclude.html" style="position: absolute; bottom:0; right: 0; height:100px"></iframe>
 
-</div>
-</section>
-
-<section class="slide">
-  <div class="midten">
-    <h2> Transclude som funksjon:</h2>
-    <pre class="brush: js">
-      link: function(scope, element, attributes, ctrl, transclude) {
-      (...)
-    }
-  </pre>
-</div>
-</section>
 <section class="slide shout">
   <div class="midtstilt">
     <h2> Oppgavetid</h2>
