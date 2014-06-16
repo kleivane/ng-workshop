@@ -687,11 +687,8 @@
    <pre class="brush: js">
     myApp.directive('myDirective', function(dep1, dep2) {
       return {
-          //..
-
         templateUrl: 'path/to/external/template.html',
         template: '<a class="button button-large">Klikk her</a>',
-
       };
     });
 </pre>
@@ -704,22 +701,24 @@
     <pre class="brush: js">
       myApp.directive('myDirective', function(dep1, dep2) {
       return {
-      link: function postLink(scope, iElement, iAttrs) {
-      scope.$watch('name', function(newVal, oldVal) {..}
+      link: function(scope, element, attrs) {
+        // logikk
     }
   }
 });
 </pre>
 
-<p>
-  Link-funksjonen registerer DOM-eventer og oppdaterer DOMen selv. Her vil vi finne mye av logikken i templatene.
-  <p>
+Fra <a href="https://docs.angularjs.org/guide/directive">dokumentasjonen</a>:
+<ul><li>element is the jqLite-wrapped element that this directive matches.</li>
+<li>attrs is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values.</li></ul>
+
   </div>
 </section>
 
 <section class="slide code">
   <div>
-    <h2> Variabler på scope </h2>
+    <h2>Scope og variabler</h2>
+    Scope gir konteksten for å evaluere uttrykk i HTML-templaten.
     <pre class="brush: js">
       link: function(scope, element, attr) {
       scope.skalVises = false;
