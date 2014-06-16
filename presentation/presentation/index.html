@@ -1002,6 +1002,13 @@ $injector - som faktisk opprettet instansene av servicene
 <section class="slide">
   <div>
     <h2>Angular-testing</h2>
+    <a href="https://docs.angularjs.org/api/ngMock">angular-mocks</a>
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Angular-testing</h2>
     <div>Modulene som skal være tilgjengelig må lastes med <a href="https://docs.angularjs.org/api/ngMock/function/angular.mock.module">module</a>:
     <code>beforeEach(module('min-modul'));</code>
     </div>
@@ -1012,6 +1019,28 @@ $injector - som faktisk opprettet instansene av servicene
     <div>
      Man kan bruke funksjonen <a href="https://docs.angularjs.org/api/ngMock/function/angular.mock.inject">inject</a> for å få tak i andre Angular-moduler. Noen moduler er for eksempel <a href="https://docs.angularjs.org/api/ng/service/$httpBackend">$httpBackend</a> som kan mocke http-kall og returer i tester.
      </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Testing av direktiver</h2>
+    <pre class="brush: js">
+      var elm, createElm;
+
+      createElm = function(element){
+        elm = angular.element(element);
+        scope = $rootScope;
+        $compile(elm)(scope);
+        scope.$digest();
+      };
+      
+      //Opprett
+      createElm('<my-directive></my-directive>')
+      
+      //verifiser
+      expect(elm).toHaveClass('valid');
+      </pre>
   </div>
 </section>
 
