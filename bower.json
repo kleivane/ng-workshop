@@ -16,7 +16,7 @@
     "angular-unicorn-directive": "~0.0.2"
   },
   "resolutions": {
-    "angular": "1.2.16"
+    "angular": "1.2.18"
   },
   "devDependencies": {
     "angular-route": "~1.2.16",
