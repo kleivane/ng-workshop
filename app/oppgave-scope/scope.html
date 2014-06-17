@@ -1,21 +1,17 @@
-<p>Booking av rom for xx gjester</p>
-
+<p>Booking av rom for XX gjester</p>
 
 <btf-markdown>
 Målet for denne oppgaven er å lage en liten del av et bookingsystem som viser navnet og sammenligner pris på to forskjellige hoteller, samt gir mulighet for å velge antall gjester som skal bo på hotellet og om de vil ha frokost. Utregning bør bli noe som dette  = gjester * (rompris + mat * matpris).
 
 * Installer [Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?utm_source=chrome-ntp-icon) i Chrome.
 
-* Start med å lage et inputfelt for antall gjester og en radiogruppe for valg av mat i denne fila. Valuen på radiogruppen er 1 for ja jeg vil ha mat og 0 for jeg vil ikke ha mat.
+* Start med å lage et inputfelt for antall gjester og en radiogruppe for valg av mat i denne fila. Valuen på radiogruppen er 1 for ja jeg vil ha frokost og 0 for jeg vil ikke ha frokost.
 * Bytt ut xx i overskriften på denne siden med antall gjester hentet fra inputfeltet.
 
-* Lag deretter et direktiv som skal presentere navnet på hotellet samt et prisoverslag for bookingen. Man skal kunne sende inn pris pr gjest og pris på mat pr gjest
-* Lag to hoteller med forskjellig pris.
+* Lag deretter et direktiv som skal presentere navnet på hotellet samt et prisoverslag for bookingen. Man skal kunne sende inn pris pr gjest og pris på mat pr gjest som attributter. Dette skal gjøres uten å sette scope i direktivet. 
+* Bruk direktivet du har laget til å skrive ut et nytt prisoverslag for "Superhotell" med kjempebillige priser slik at brukerne av tjenesten kan sammenligne priser. 
 * Hvilket scope blir brukt her i disse direktivene?
-* Sett scope til true og observer i Batarang
+* Sett scope til true og observer i Batarang. Gjør det samme for isolated scope.
 
-* Det ene hotellet tilbyr frokost til 100 og det andre tilbyr fullpensjon til 1000 kr dagen. Endre og legg til radioknapper for å illustere dette.
-* Oppdater direktivet til å takle de nye endringene
-* Se hvilke endringer dette gir i scope-visningen i Batarang
-
+* En endring! Det ene hotellet tilbyr nå kun frokost til 100 og det andre tilbyr  kun middag til 1000 kr dagen. Legg til radioknapper for å illustere ja/nei til middag. Prøv å ikke gjøre endringer i template-fila, bruk kun isolated scope.
 </btf-markdown>
