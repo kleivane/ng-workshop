@@ -9,10 +9,10 @@ Lenke til slides:
 
 * Installer Batarang - extension i Google Chrome.
 * Installer [node](http://nodejs.org/) med npm om du ikke har det.
-* Sjekk om grunt-cli er installert, om ikke installer det med `npm install grunt-cli`
-* Sjekk om karma-cli er installert, om ikke installer det med `npm install -g karma-cli`
+* Sjekk om grunt-cli er installert ved å kjøre `grunt --version`, om ikke installer det med `npm install grunt-cli`
+* Sjekk om karma-cli er installert ved å kjøre `karma`, om ikke installer det med `npm install -g karma-cli`
 * Kjør `npm install`
-* Om du ikke har bower installert, kjør `npm install bower -g`
+* Sjekk om bower er installert ved å kjøre `bower --version`, og kjør `npm install bower -g` om den ikke fantes. 
 * Kjør `bower install`
 * Forsøk å kjør `grunt server` dersom dette åpner et nettleservindu med en app, er alt gått OK.
 
