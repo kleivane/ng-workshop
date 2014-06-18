@@ -16,11 +16,11 @@
    bekkApp.directive("scopeExample", function() {
       return {
         scope: {
-                ngModel: '=',  // Bind the ngModel to the object given
+                mottaker: '=',  // Bind the ngModel to the object given
                 onSend: '&',   // Pass a reference to the method 
                 fra: '@'  // Store the string associated by fromName
              },
-             template: '<div>Fra: {{ fra }} <br/> Til: {{ngModel}}</div>'
+             template: '<div>Fra: {{ fra }} <br/> Til: {{mottaker}}</div>'
           };
        });
    </script>
@@ -30,7 +30,7 @@
    <div ng-app="bekkApp" ng-controller="EmailCtrl">
       <input type="text" ng-model="til" />
 
-      <div scope-example ng-model="til" on-send="sendMail()"
+      <div scope-example mottaker="til" on-send="sendMail()"
       fra="ingvild.indrebo@bekk.no"></div>
    </div>
 
