@@ -16,6 +16,16 @@ Lenke til slides:
 * Kjør `bower install`
 * Forsøk å kjør `grunt server` dersom dette åpner et nettleservindu med en app, er alt gått OK.
 
+### Tips til trøblete installering
+
+* npm kjører ikke
+	* legg npm til i path, mac terminal `export PATH=/usr/local/share/npm/bin:$PATH`
+* bower kjører ikke
+	* exit of code #128: det har hjulpet å endre gitconfig
+    [url "https://"]
+    insteadOf = git://
+
+
 ## Utvikling
 
 Kjør serveren med `grunt server`. Da bør Chrome åpnes med en kjørende appliksjon.
