@@ -19,9 +19,9 @@ Lenke til slides:
 ### Tips til trøblete installering
 
 * npm kjører ikke
-** legg npm til i path, mac terminal `export PATH=/usr/local/share/npm/bin:$PATH`
+	* legg npm til i path, mac terminal `export PATH=/usr/local/share/npm/bin:$PATH`
 * bower kjører ikke
-** exit of code #128: det har hjulpet å endre gitconfig
+	* exit of code #128: det har hjulpet å endre gitconfig
     [url "https://"]
     insteadOf = git://
 
